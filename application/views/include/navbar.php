@@ -3,76 +3,71 @@ $controller = $this->router->fetch_class();
 $level = $this->session->userdata('ap_level');
 ?>
 
-<nav class="navbar navbar-default">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #FF8C00">
+	
 			<a class="navbar-brand" href="<?php echo site_url(); ?>">
 				<img alt="<?php echo config_item('web_title'); ?>" src="<?php echo config_item('img'); ?>logo_small.png">
 			</a>
-		</div>
+			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="navbar-toggler-icon"></span>
+				
+			</button>
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
+			<ul class="navbar-nav mr-auto">
 
 				<?php if($level == 'admin' OR $level == 'keuangan' OR $level == 'kasir') { ?>
-				<li class="dropdown <?php if($controller == 'penjualan') { echo 'active'; } ?>">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class='fa fa-shopping-cart fa-fw'></i> Penjualan <span class="caret"></span></a>
+				<li class="nav-item dropdown <?php if($controller == 'penjualan') { echo 'bg-dark active'; } ?>">
+					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="penjualan" ><i class='fa fa-shopping-cart fa-fw'></i> Penjualan <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<?php if($level !== 'keuangan'){ ?>
-						<li><a href="<?php echo site_url('penjualan/transaksi'); ?>">Transaksi</a></li>
+						<li><a class="dropdown-item" href="<?php echo site_url('penjualan/transaksi'); ?>">Transaksi</a></li>
 						<?php } ?>
-						<li><a href="<?php echo site_url('penjualan/history'); ?>">History Penjualan</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="<?php echo site_url('penjualan/pelanggan'); ?>">Data Pelanggan</a></li>
+						<li><a class="dropdown-item" href="<?php echo site_url('penjualan/history'); ?>">History Penjualan</a></li>
+						<div class="dropdown-divider"></div>
+						<li><a class="dropdown-item" href="<?php echo site_url('penjualan/pelanggan'); ?>">Data Pelanggan</a></li>
 					</ul>
 				</li>
 				<?php } ?>
 
-				<li class="dropdown <?php if($controller == 'barang') { echo 'active'; } ?>">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class='fa fa-cube fa-fw'></i> Barang <span class="caret"></span></a>
+				<li class="nav-item dropdown <?php if($controller == 'barang') { echo 'bg-dark active'; } ?>">
+					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class='fa fa-cube fa-fw'></i> Barang <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="<?php echo site_url('barang'); ?>">Semua Barang</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="<?php echo site_url('barang/list-kategori'); ?>">List Kategori</a></li>
+						<li><a class="dropdown-item" href="<?php echo site_url('barang'); ?>">Semua Barang</a></li>
+						<div class="dropdown-divider"></div>
+						<li><a class="dropdown-item" href="<?php echo site_url('barang/list-kategori'); ?>">List Kategori</a></li>
 					</ul>
 				</li>
 
 				<?php if($level == 'admin' OR $level == 'keuangan') { ?>
-				<li class="dropdown <?php if($controller == 'laporan') { echo 'active'; } ?>">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class='fa fa-file-text-o fa-fw'></i> Laporan <span class="caret"></span></a>
+				<li class="nav-item dropdown <?php if($controller == 'laporan') { echo 'bg-dark active'; } ?>">
+					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class='fa fa-file-text-o fa-fw'></i> Laporan <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="<?php echo site_url('laporan'); ?>">Laporan Penjualan</a></li>
-						<li><a href="<?php echo site_url('laporan/untung'); ?>">Laporan Keuntungan</a></li>
+						<li><a class="dropdown-item" href="<?php echo site_url('laporan'); ?>">Laporan Penjualan</a></li>
+						<li><a class="dropdown-item" href="<?php echo site_url('laporan/untung'); ?>">Laporan Keuntungan</a></li>
 					</ul>
 				</li>
 				<?php } ?>
 
 				<?php if($level == 'admin') { ?>
-				<li <?php if($controller == 'user') { echo "class='active'"; } ?>><a href="<?php echo site_url('user'); ?>"><i class='fa fa-users fa-fw'></i> List User</a></li>
+				<li <?php if($controller == 'user') { echo "class='nav-item bg-dark active'"; } ?>><a  class="nav-link" href="<?php echo site_url('user'); ?>"><i class='fa fa-users fa-fw'></i> List User</a></li>
 				<?php } ?>
 			</ul>
 
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class='fa fa-user fa-fw'></i> <?php echo $this->session->userdata('ap_nama'); ?> <span class="caret"></span></a>
+			<ul class="nav navbar-nav navbar-right mr-5">
+				<li class="nav-item dropdown">
+					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class='fa fa-user fa-fw'></i> <?php echo $this->session->userdata('ap_nama'); ?> <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $this->session->userdata('ap_level_caption'); ?></li>
-						<hr>
-						<li><a href="<?php echo site_url('user/ubah-password'); ?>" id='GantiPass'>Ubah Password</a></li>
+						<li><a class="dropdown-item mb-2"><?php echo $this->session->userdata('ap_level_caption'); ?></a></li>
+						<li><a class="dropdown-item"  href="<?php echo site_url('user/ubah-password'); ?>" id='GantiPass'>Ubah Password</a></li>
 						<li role="separator" class="divider"></li>
-						<li><a href="<?php echo site_url('secure/logout'); ?>"><i class='fa fa-sign-out fa-fw'></i> Log Out</a></li>
+						<li><a class="dropdown-item" href="<?php echo site_url('secure/logout'); ?>"><i class='fa fa-sign-out fa-fw'></i> Log Out</a></li>
 					</ul>
 				</li>
 			</ul>
 		</div>
-	</div>
 </nav>
+<br><br>
 
 <script>
 $(document).on('click', '#GantiPass', function(e){

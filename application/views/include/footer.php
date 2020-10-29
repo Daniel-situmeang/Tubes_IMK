@@ -1,4 +1,4 @@
-		<script src="<?php echo config_item('bootstrap'); ?>js/bootstrap.min.js"></script>
+	<script src="<?php echo config_item('boot4'); ?>dist/js/bootstrap.min.js"></script>
 		<div class="modal" id="ModalGue" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">

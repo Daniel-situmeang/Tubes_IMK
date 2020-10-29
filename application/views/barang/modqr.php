@@ -41,7 +41,7 @@ $this->load->model('M_barang');
  */
     echo '<h1>Nama Barang : '.$nama_barang.'</h1>';
  
-    $PNG_TEMP_DIR = 'C:\xampp\htdocs\Kasir\assets'.DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR;
+    $PNG_TEMP_DIR = 'C:\xampp\htdocs\Tubes_IMK\assets'.DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR;
 
     $PNG_WEB_DIR = base_url('assets/temp/');
 

@@ -11,21 +11,22 @@ $level = $this->session->userdata('ap_level');
 			<h3><i class='fa fa-shopping-cart fa-fw'></i> Penjualan <i class='fa fa-angle-right fa-fw'></i> History Penjualan</h3>
 			<hr />
 
-			<div class='table-responsive'>
-				<link rel="stylesheet" href="<?php echo config_item('plugin'); ?>datatables/css/dataTables.bootstrap.css"/>
-				<table id="my-grid" class="table table-striped table-bordered">
-					<thead>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+			<div class='table-responsive-sm'>
+				<table id="my-grid" class="table table-striped mt-5 table-dark text-center">
+				<thead style="background-color: #FF8C00">
 						<tr>
-							<th>#</th>
-							<th>Tanggal</th>
-							<th>Nomor Nota</th>
-							<th>Grand Modal</th>
-							<th>Grand Total</th>
-							<th>Pelanggan</th>
-							<th>Keterangan</th>
-							<th>Kasir</th>
+							<th scope="col" style="width: 5%">#</th>
+							<th scope="col" style="width: 20%">Tanggal</th>
+							<th scope="col" style="width: 15%">Nomor Nota</th>
+							<th scope="col" style="width: 10%">Grand Modal</th>
+							<th scope="col" style="width: 10%">Grand Total</th>
+							<th scope="col" style="width: 10%">Pelanggan</th>
+							<th scope="col" style="width: 10%">Keterangan</th>
+							<th scope="col" style="width: 15%">Kasir</th>
 							<?php if($level == 'admin') { ?>
-							<th class='no-sort'>Hapus</th>
+							<th class='no-sort' scope="col" style="width: 15%">Hapus</th>
 							<?php } ?>
 						</tr>
 					</thead>
@@ -34,7 +35,7 @@ $level = $this->session->userdata('ap_level');
 		</div>
 	</div>
 </div>
-<p class='footer'><?php echo config_item('web_footer'); ?></p>
+
 
 <?php
 $tambahan = nbs(2)."<span id='Notifikasi' style='display: none;'></span>";
@@ -47,8 +48,8 @@ $tambahan = nbs(2)."<span id='Notifikasi' style='display: none;'></span>";
 			"stateSave" : false,
 			"bAutoWidth": true,
 			"oLanguage": {
-				"sSearch": "<i class='fa fa-search fa-fw'></i> Pencarian : ",
-				"sLengthMenu": "_MENU_ &nbsp;&nbsp;Data Per Halaman <?php echo $tambahan; ?>",
+				"sSearch": "&nbsp<i class='fa fa-search fa-fw'></i> Pencarian : ",
+				"sLengthMenu": "Data Per Halaman <?php echo $tambahan; ?>_MENU_ &nbsp;&nbsp;",
 				"sInfo": "Menampilkan _START_ s/d _END_ dari <b>_TOTAL_ data</b>",
 				"sInfoFiltered": "(difilter dari _MAX_ total data)", 
 				"sZeroRecords": "Pencarian tidak ditemukan", 
@@ -127,7 +128,6 @@ $tambahan = nbs(2)."<span id='Notifikasi' style='display: none;'></span>";
 		$('#ModalGue').modal('show');
 	});
 </script>
-<script type="text/javascript" language="javascript" src="<?php echo config_item('plugin'); ?>datatables/js/jquery.dataTables.js"></script>
-<script type="text/javascript" language="javascript" src="<?php echo config_item('plugin'); ?>datatables/js/dataTables.bootstrap.js"></script>
-
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
 <?php $this->load->view('include/footer'); ?>

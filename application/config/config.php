@@ -37,12 +37,15 @@ $config['base_url'] .= preg_replace('@/+$@','',dirname($_SERVER['SCRIPT_NAME']))
 
 //Setingan Folder Assets dan Folder didalamnya
 $config['assets']			= $config['base_url'].'assets/';
+$config['node_modules']		= $config['assets'].'node_modules/';
 $config['css'] 				= $config['assets'].'css/';
 $config['js'] 				= $config['assets'].'js/';
 $config['img'] 				= $config['assets'].'img/';
 $config['plugin'] 			= $config['assets'].'plugin/';
 $config['bootstrap']		= $config['plugin'].'bootstrap-3.3.6/';
 $config['font_awesome']		= $config['plugin'].'font-awesome/';
+$config['boot4']			= $config['node_modules'].'bootstrap/';
+$config['jq']				= $config['node_modules'].'jquery/';
 
 //Setingan Judul & Footer Web
 $config['web_title']		= "Aplikasi Penjualan";
@@ -58,7 +61,7 @@ $config['web_footer']		= $config['web_title']." &copy; 2019. <b>Programmed & Des
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

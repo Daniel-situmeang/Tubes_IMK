@@ -27,30 +27,27 @@ if($level !== 'admin')
 ?>
 
 <div class="container-fluid">
-	<div class="panel panel-default">
-		<div class="panel-body">
-
 			<div class='row'>
 				<div class='col-sm-3'>
-					<div class="panel panel-default">
-						<div class="panel-heading"><i class='fa fa-file-text-o fa-fw'></i> Informasi Nota</div>
-						<div class="panel-body">
+					<div class="card mb-5">
+						<div class="card-header" style="background-color: #FF8C00"><font color="white"><i class='fa fa-file-text-o fa-fw'></i><b> Informasi Nota</b></font></div>
+						<div class="card-body">
 
 							<div class="form-horizontal">
-								<div class="form-group">
-									<label class="col-sm-4 control-label">No. Nota</label>
+								<div class="form-group row">
+									<label class="col-sm-4 col-form-label col-form-label-sm"><b>No. Nota</b></label>
 									<div class="col-sm-8">
 										<input type='text' name='nomor_nota' class='form-control input-sm' id='nomor_nota' value="<?php echo strtoupper(uniqid()).$this->session->userdata('ap_id_user'); ?>" <?php echo $readonly; ?>>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-sm-4 control-label">Tanggal</label>
+								<div class="form-group row">
+									<label class="col-sm-4 col-form-label col-form-label-sm"><b>Tanggal</b></label>
 									<div class="col-sm-8">
 										<input type='text' name='tanggal' class='form-control input-sm' id='tanggal' value="<?php echo date('Y-m-d H:i:s'); ?>" <?php echo $disabled; ?>>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-sm-4 control-label">Kasir</label>
+								<div class="form-group row">
+									<label class="col-sm-4 col-form-label col-form-label-sm"><b>Kasir</b></label>
 									<div class="col-sm-8">
 										<select name='id_kasir' id='id_kasir' class='form-control input-sm' <?php echo $disabled; ?>>
 											<?php
@@ -74,9 +71,9 @@ if($level !== 'admin')
 
 						</div>
 					</div>
-					<div class="panel panel-default" id='PelangganArea'>
-						<div class="panel-heading"><i class='fa fa-user'></i> Informasi Pelanggan</div>
-						<div class="panel-body">
+					<div class="card" id='PelangganArea'>
+						<div class="card-header" style="background-color: #FF8C00"><font color="white"><i class='fa fa-user'></i> Informasi Pelanggan</font></div>
+						<div class="card-body">
 							<div class="form-group">
 								<label>Pelanggan</label>
 								<a href="<?php echo site_url('penjualan/tambah-pelanggan'); ?>" class='pull-right' id='TambahPelanggan'>Tambah Baru ?</a>
@@ -206,24 +203,27 @@ if($level !== 'admin')
     }
   </script>
 <div class="container" id="QR-Code">
-            <div class="panel panel-info">
-                <div class="panel-heading">
+            <div class="card mb-5">
+                <div class="card-header bg-dark">
                     <div class="navbar-form navbar-left">
-                        <h4>WebCodeCamJS.js Demonstration</h4>
+                        <h4><font color="orange"> <i class="fa fa-qrcode" aria-hidden="true"></i></font><font color="white"> Qrcode Scanner </font></h4>
+						<br>
                     </div>
                     <div class="navbar-form navbar-right">
                         <select class="form-control" id="camera-select"></select>
+						<br>
                         <div class="form-group">
                             <input id="image-url" type="text" class="form-control" placeholder="Image url">
-                            <button title="Decode Image" class="btn btn-default btn-sm" id="decode-img" type="button" data-toggle="tooltip"><span class="glyphicon glyphicon-upload"></span></button>
-                            <button title="Image shoot" class="btn btn-info btn-sm disabled" id="grab-img" type="button" data-toggle="tooltip"><span class="glyphicon glyphicon-picture"></span></button>
-                            <button title="Play" class="btn btn-success btn-sm" id="play" type="button" data-toggle="tooltip"><span class="glyphicon glyphicon-play"></span></button>
-                            <button title="Pause" class="btn btn-warning btn-sm" id="pause" type="button" data-toggle="tooltip"><span class="glyphicon glyphicon-pause"></span></button>
-                            <button title="Stop streams" class="btn btn-danger btn-sm" id="stop" type="button" data-toggle="tooltip"><span class="glyphicon glyphicon-stop"></span></button>
+							<br>
+                            <button title="Decode Image" class="btn btn-default btn-md" id="decode-img" type="button" data-toggle="tooltip"><i class="fa fa-upload" aria-hidden="true"></i></button>
+                            <button title="Image shoot" class="btn btn-info btn-md disabled" id="grab-img" type="button" data-toggle="tooltip"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
+                            <button title="Play" class="btn btn-success btn-md" id="play" type="button" data-toggle="tooltip"><i class="fa fa-play" aria-hidden="true"></i></button>
+                            <button title="Pause" class="btn btn-warning btn-md" id="pause" type="button" data-toggle="tooltip"><i class="fa fa-pause" aria-hidden="true"></i></button>
+                            <button title="Stop streams" class="btn btn-danger btn-md" id="stop" type="button" data-toggle="tooltip"><i class="fa fa-stop" aria-hidden="true"></i></button>
                          </div>
                     </div>
                 </div>
-                <div class="panel-body text-center">
+                <div class="card-body text-center">
                     <div class="col-md-12">
                         <div class="well col-sm-12" style="position: relative;display: inline-block;">
                             <canvas alt="Responsive image" id="webcodecam-canvas"></canvas>
@@ -257,10 +257,12 @@ if($level !== 'admin')
                             <div hidden class="well" style="overflow: hidden;">
                                 <img width="320" height="240" id="scanned-img" src="">
                             </div>
+							<br><br>
                             <div class="caption">
                                 <h3>Scanned result</h3>
                                 <p id="scanned-QR"></p>
                             </div>
+							<br>
                         </div>
                     </div>
                 </div>
@@ -350,7 +352,6 @@ if($level !== 'admin')
 	</div>
 </div>
 
-<p class='footer'><?php echo config_item('web_footer'); ?></p>
 
 <link rel="stylesheet" type="text/css" href="<?php echo config_item('plugin'); ?>datetimepicker/jquery.datetimepicker.css"/>
 <script src="<?php echo config_item('plugin'); ?>datetimepicker/jquery.datetimepicker.js"></script>
@@ -421,7 +422,7 @@ function BarisBaru()
 			Baris += "<input type='hidden' name='sub_total[]'>";
 			Baris += "<span></span>";
 		Baris += "</td>";
-		Baris += "<td><button class='btn btn-default' id='HapusBaris'><i class='fa fa-times' style='color:red;'></i></button></td>";
+		Baris += "<td><button class='btn btn-danger' id='HapusBaris'><i class='fa fa-times'></i></button></td>";
 		Baris += "</tr>";
 
 	$('#TabelTransaksi tbody').append(Baris);
@@ -883,4 +884,5 @@ function CetakStruk()
 }
 </script>
 <script type="text/javascript" src="<?php echo base_url(); ?>js/main.js"></script>
+</div>
 <?php $this->load->view('include/footer'); ?>
