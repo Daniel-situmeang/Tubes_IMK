@@ -226,13 +226,14 @@ if($level !== 'admin')
                 </div>
                 <div class="card-body text-center">
                     <div class="col-md-12">
-                        <div class="well col-sm-12" style="position: relative;display: inline-block;">
-                            <canvas alt="Responsive image" id="webcodecam-canvas"></canvas>
+						<div class="well col-sm-12" style="position: relative;display: inline-block;">
+						<br>
+                            <canvas id="webcodecam-canvas" style="width:100%;"></canvas>
                             <div class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
                             <div class="scanner-laser laser-rightTop" style="opacity: 0.5;"></div>
                             <div class="scanner-laser laser-leftBottom" style="opacity: 0.5;"></div>
                             <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
-                        </div>
+						</div>
                         <div class="well" style="width: 100%;">
                             <label id="zoom-value" width="100">Zoom: 2</label>
                             <input id="zoom" onchange="Page.changeZoom();" type="range" min="10" max="30" value="20">
