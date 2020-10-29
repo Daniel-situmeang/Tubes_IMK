@@ -121,7 +121,6 @@
 						<div id='ResponseInput'></div>
 					</div>
 				</div>
-				<p class='footer'><?php echo config_item('web_footer'); ?></p>
 			</div>
 		</div>
 		     

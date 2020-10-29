@@ -281,6 +281,7 @@ if($level !== 'admin')
 						<i class='fa fa-shopping-cart fa-fw'></i> Penjualan <i class='fa fa-angle-right fa-fw'></i> Transaksi
 						<a href="<?php echo site_url('penjualan/transaksi'); ?>" class='pull-right'><i class='fa fa-refresh fa-fw'></i> Refresh Halaman</a>
 					</h3>
+					<div class="table-responsive-sm">
 					<table class='table table-striped table-bordered ' id='TabelTransaksi'>
 						<thead class="thead-dark">
 							<tr>
@@ -295,6 +296,7 @@ if($level !== 'admin')
 						</thead>
 						<tbody></tbody>
 					</table>
+					</div>
 
 					<div class='alert alert-info TotalBayar'>
 						<button id='BarisBaru' class='btn btn-primary pull-left'><i class='fa fa-plus fa-fw'></i> Baris Baru (F7)</button>
@@ -331,7 +333,7 @@ if($level !== 'admin')
 								</div>
 								<div class='row'>
 									<div class='col-sm-6' >
-										<button type='button' class='btn btn-primary btn-block' id='CetakStruk'>
+										<button type='button' class='btn btn-primary btn-block mb-1' id='CetakStruk'>
 											<i class='fa fa-print'></i> Cetak (F9)
 										</button>
 									</div>
