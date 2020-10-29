@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
 <?php echo form_open('barang/tambah', array('id' => 'FormTambahBarang')); ?>
 <div class='table-responsive-sm'>
-<table class='table table-striped mt-5 table-light text-center' id='TabelTambahBarang'>
+<table class='table table-striped table-bordered table-light text-center' id='TabelTambahBarang'>
 	<thead class="thead-dark">
 		<tr>
 			<th>#</th>

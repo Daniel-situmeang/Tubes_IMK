@@ -1,21 +1,21 @@
 <?php echo form_open('user/tambah', array('id' => 'FormTambahUser')); ?>
 <div class='form-group'>
-	<label>Username Login</label>
+	<label class="font-weight-bold">Username Login</label>
 	<input type='text' name='username' class='form-control'>
 </div>
 <div class='form-group'>
-	<label>Password Login</label>
+	<label class="font-weight-bold">Password Login</label>
 	<input type='password' name='password' class='form-control'>
 </div>
 
-<hr />
+<div class="dropdown-divider"></div>
 
 <div class='form-group'>
-	<label>Nama Lengkap</label>
+	<label class="font-weight-bold">Nama Lengkap</label>
 	<input type='text' name='nama' class='form-control'>
 </div>
 <div class='form-group'>
-	<label>Akses</label>
+	<label class="font-weight-bold">Akses</label>
 	<select name='id_akses' class='form-control'>
 	<?php
 	foreach($akses->result() as $a)
@@ -26,7 +26,7 @@
 	</select>
 </div>
 <div class='form-group'>
-	<label>Status</label>
+	<label class="font-weight-bold">Status</label>
 	<select name='status' class='form-control'>
 		<option value="Aktif">Aktif</option>
 		<option value="Non Aktif">Non Aktif</option>

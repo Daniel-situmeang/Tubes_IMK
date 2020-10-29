@@ -10,7 +10,7 @@
 		<link href="<?php echo config_item('boot4'); ?>dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="<?php echo config_item('bootstrap'); ?>css/bootstrap-theme.min.css" rel="stylesheet">
 		<link href="<?php echo config_item('font_awesome'); ?>css/font-awesome.min.css" rel="stylesheet">
-		<!-- <link href="<?php echo config_item('css'); ?>style-gue.css" rel="stylesheet"> -->
+		<link href="<?php echo config_item('css'); ?>extended.css" rel="stylesheet">
 		<!-- <script src="<?php echo config_item('js'); ?>jquery.min.js"></script> -->
 		<script src="<?php echo config_item('assets'); ?>jQuery/jquery-3.5.1.min.js"></script>
 		

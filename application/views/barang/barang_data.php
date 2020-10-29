@@ -5,7 +5,8 @@
 $level = $this->session->userdata('ap_level');
 ?>
 
-<div class="container">
+<div class="container bg-light">
+	<br>
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<h3><i class='fa fa-cube fa-fw'></i> Barang <i class='fa fa-angle-right fa-fw'></i> Semua Barang</h3>
@@ -14,7 +15,7 @@ $level = $this->session->userdata('ap_level');
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
 			<div class='table-responsive-sm'>
-				<table id="my-grid" class="table table-striped mt-5 table-dark text-center">
+				<table id="my-grid" class="table table-striped table-bordered mt-5 table-dark text-center">
 					<thead style="background-color: #FF8C00">
 						<tr>
 							<th>#</th>
@@ -35,6 +36,7 @@ $level = $this->session->userdata('ap_level');
 			</div>
 		</div>
 	</div>
+	<br>
 </div>
 
 <?php

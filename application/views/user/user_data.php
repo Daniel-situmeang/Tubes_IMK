@@ -5,16 +5,17 @@
 $level = $this->session->userdata('ap_level');
 ?>
 
-<div class="container">
+<div class="container bg-light">
+	<br>
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<h3><i class='fa fa-users fa-fw'></i> Daftar User</h3>
 			<hr />
-
-			<div class='table-responsive'>
-				
-				<table id="my-grid" class="table table-striped table-bordered">
-					<thead>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+			<div class='table-responsive-sm'>
+				<table id="my-grid" class="table table-striped table-bordered mt-5 table-dark text-center">
+					<thead style="background-color: #FF8C00">
 						<tr class="warning">
 							<th>#</th>
 							<th>Username</th>
@@ -29,11 +30,11 @@ $level = $this->session->userdata('ap_level');
 			</div>
 		</div>
 	</div>
+	<br>
 </div>
-<p class='footer'><?php echo config_item('web_footer'); ?></p>
 
 <?php
-$tambahan = nbs(2)."<a href='".site_url('user/tambah')."' class='btn btn-default' id='TambahUser'><i class='fa fa-plus fa-fw'></i> Tambah User</a>";
+$tambahan = nbs(2)."<a href='".site_url('user/tambah')."' class='btn btn-primary' id='TambahUser'><i class='fa fa-plus fa-fw'></i> Tambah User</a>";
 $tambahan .= nbs(2)."<span id='Notifikasi' style='display: none;'></span>";
 ?>
 
@@ -125,7 +126,6 @@ $tambahan .= nbs(2)."<span id='Notifikasi' style='display: none;'></span>";
 		$('#ModalGue').modal('show');
 	});
 </script>
-<script type="text/javascript" language="javascript" src="<?php echo config_item('plugin'); ?>datatables/js/jquery.dataTables.js"></script>
-<script type="text/javascript" language="javascript" src="<?php echo config_item('plugin'); ?>datatables/js/dataTables.bootstrap.js"></script>
-
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
 <?php $this->load->view('include/footer'); ?>

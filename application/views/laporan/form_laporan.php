@@ -5,7 +5,8 @@
 $level = $this->session->userdata('ap_level');
 ?>
 
-<div class="container">
+<div class="container bg-light">
+	<br>
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<h3><i class='fa fa-file-text-o fa-fw'></i> Laporan Penjualan</h3>
@@ -41,7 +42,7 @@ $level = $this->session->userdata('ap_level');
 						<div class="form-group">
 							<div class="col-sm-4"></div>
 							<div class="col-sm-8">
-								<button type="submit" class="btn btn-default" style='margin-left: 0px;'>Tampilkan</button>
+								<button type="submit" class="btn btn-primary" style='margin-left: 0px;'>Tampilkan</button>
 							</div>
 						</div>
 					</div>
@@ -53,8 +54,8 @@ $level = $this->session->userdata('ap_level');
 			<div id='result'></div>
 		</div>
 	</div>
+	<br>
 </div>
-<p class='footer'><?php echo config_item('web_footer'); ?></p>
 
 <link rel="stylesheet" type="text/css" href="<?php echo config_item('plugin'); ?>datetimepicker/jquery.datetimepicker.css"/>
 <script src="<?php echo config_item('plugin'); ?>datetimepicker/jquery.datetimepicker.js"></script>

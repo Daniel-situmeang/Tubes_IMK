@@ -95,7 +95,7 @@
 	<img src="<?=$barang->qrcode?>" class="img-fluid" alt="Responsive image" />
 </center>
 
-<center><a href="<?=site_url('Barang/qrcode/')?><?=$barang->id_barang?>/<?=$barang->nama_barang?>" class="btn btn-primary">Input Barcode</a></center>
+<center><a href="<?=site_url('barang/qrcode/')?><?=$barang->id_barang?>/<?=$barang->nama_barang?>" class="btn btn-primary">Input Barcode</a></center>
 
 <script>
 $(document).ready(function(){

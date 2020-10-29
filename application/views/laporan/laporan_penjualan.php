@@ -1,7 +1,9 @@
 <?php if($penjualan->num_rows() > 0) { ?>
-
-	<table class='table table-bordered'>
-		<thead>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+	<div class="table-responsive-sm">
+	<table class='table table-bordered table-striped' id="my-grid">
+		<thead class="thead-dark">
 			<tr>
 				<th>#</th>
 				<th>Tanggal</th>
@@ -41,8 +43,8 @@
 		$from 	= date('Y-m-d', strtotime($from));
 		$to		= date('Y-m-d', strtotime($to));
 		?>
-		<a href="<?php echo site_url('laporan/pdf/'.$from.'/'.$to); ?>" target='blank' class='btn btn-default'><img src="<?php echo config_item('img'); ?>pdf.png"> Export ke PDF</a>
-		<a href="<?php echo site_url('laporan/excel/'.$from.'/'.$to); ?>" target='blank' class='btn btn-default'><img src="<?php echo config_item('img'); ?>xls.png"> Export ke Excel</a>
+		<a href="<?php echo site_url('laporan/pdf/'.$from.'/'.$to); ?>" target='blank' class='btn btn-danger'><img src="<?php echo config_item('img'); ?>pdf.png"> Export ke PDF</a>
+		<a href="<?php echo site_url('laporan/excel/'.$from.'/'.$to); ?>" target='blank' class='btn btn-success'><img src="<?php echo config_item('img'); ?>xls.png"> Export ke Excel</a>
 	</p>
 	<br />
 <?php } ?>

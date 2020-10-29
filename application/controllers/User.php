@@ -41,7 +41,7 @@ class User extends MY_Controller
 			
 			if($row['label'] !== 'admin')
 			{
-				$nestedData[]	= "<a href='".site_url('user/hapus/'.$row['id_user'])."' id='HapusUser'><i class='fa fa-trash-o'></i> Hapus</a>";
+				$nestedData[]	= "<a href='".site_url('user/hapus/'.$row['id_user'])."' id='HapusUser'><font color='red'><i class='fa fa-trash-o'></i> Hapus</font></a>";
 			}
 
 			if($row['label'] == 'admin')

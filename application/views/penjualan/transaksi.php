@@ -121,7 +121,8 @@ if($level !== 'admin')
 						</div>
 					</div>
 				</div>
-				<div class='col-sm-9'>
+				<div class='col-sm-9 bg-light'>
+					<br>
 					<script src="<?php echo base_url(); ?>js/BarcodeReader.js"></script>
   <script>
     var result = document.getElementById("Result");
