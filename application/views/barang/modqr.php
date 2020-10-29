@@ -5,9 +5,8 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <title>Kasir</title>
-<nav class="navbar navbar-expand-lg navbar-secondary bg-secondary">
-  <a class="navbar-brand" href="<?=base_url();?>"><img alt="<?php echo config_item('web_title'); ?>" src="<?php echo config_item('img'); ?>logo_small.png"></a>
-</nav>
+<?php $this->load->view('include/header'); ?>
+<?php $this->load->view('include/navbar'); ?>
 </head>
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -121,3 +120,4 @@ $this->load->model('M_barang');
         </div></center></form><hr/>';
         ?>
 </div>
+<?php $this->load->view('include/footer'); ?>

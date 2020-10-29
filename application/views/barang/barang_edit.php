@@ -1,7 +1,7 @@
 <?php echo form_open('barang/edit/'.$barang->id_barang, array('id' => 'FormEditBarang')); ?>
 <div class="form-horizontal">
-	<div class="form-group">
-		<label class="col-sm-3 control-label">Nama Barang</label>
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label col-form-label-sm font-weight-bold">Nama Barang</label>
 		<div class="col-sm-8">
 			<?php 
 			echo form_input(array(
@@ -12,8 +12,8 @@
 			?>
 		</div>
 	</div>
-	<div class="form-group">
-		<label class="col-sm-3 control-label">Kategori</label>
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label col-form-label-sm font-weight-bold">Kategori</label>
 		<div class="col-sm-8">
 			<select name='id_kategori_barang' class='form-control'>
 				<option value=''></option>
@@ -31,8 +31,8 @@
 			</select>
 		</div>
 	</div>
-	<div class="form-group">
-		<label class="col-sm-3 control-label">Ukuran</label>
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label col-form-label-sm font-weight-bold">Ukuran</label>
 		<div class="col-sm-8">
 			<select name='id_ukuran' class='form-control'>
 				<option value=''></option>
@@ -50,8 +50,8 @@
 			</select>
 		</div>
 	</div>
-	<div class="form-group">
-		<label class="col-sm-3 control-label">Stok</label>
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label col-form-label-sm font-weight-bold">Stok</label>
 		<div class="col-sm-8">
 			<?php 
 			echo form_input(array(
@@ -62,8 +62,8 @@
 			?>
 		</div>
 	</div>
-	<div class="form-group">
-		<label class="col-sm-3 control-label">Modal</label>
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label col-form-label-sm font-weight-bold">Modal</label>
 		<div class="col-sm-8">
 			<?php 
 			echo form_input(array(
@@ -74,8 +74,8 @@
 			?>
 		</div>
 	</div>
-	<div class="form-group">
-		<label class="col-sm-3 control-label">Harga</label>
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label col-form-label-sm font-weight-bold">Harga</label>
 		<div class="col-sm-8">
 			<?php 
 			echo form_input(array(
@@ -92,10 +92,10 @@
 <div id='ResponseInput'></div>
 
 <center>
-	<center><img src="<?=$barang->qrcode?>" class="img-fluid" alt="Responsive image" />
+	<img src="<?=$barang->qrcode?>" class="img-fluid" alt="Responsive image" />
 </center>
 
-<a href="<?=site_url('Barang/qrcode/')?><?=$barang->id_barang?>/<?=$barang->nama_barang?>" class="btn btn-primary">Input Barcode</a>
+<center><a href="<?=site_url('Barang/qrcode/')?><?=$barang->id_barang?>/<?=$barang->nama_barang?>" class="btn btn-primary">Input Barcode</a></center>
 
 <script>
 $(document).ready(function(){

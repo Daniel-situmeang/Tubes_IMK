@@ -281,7 +281,7 @@ if($level !== 'admin')
 						<a href="<?php echo site_url('penjualan/transaksi'); ?>" class='pull-right'><i class='fa fa-refresh fa-fw'></i> Refresh Halaman</a>
 					</h3>
 					<table class='table table-striped table-bordered ' id='TabelTransaksi'>
-						<thead>
+						<thead class="thead-dark">
 							<tr>
 								<th style='width:35px;'>#</th>
 								<th style='width:210px;'>Kode Barang</th>
@@ -295,14 +295,14 @@ if($level !== 'admin')
 						<tbody></tbody>
 					</table>
 
-					<div class='alert alert-warning TotalBayar'>
-						<button id='BarisBaru' class='btn btn-default pull-left'><i class='fa fa-plus fa-fw'></i> Baris Baru (F7)</button>
-						<h2>Total : <span id='TotalBayar'>Rp. 0</span></h2>
+					<div class='alert alert-info TotalBayar'>
+						<button id='BarisBaru' class='btn btn-primary pull-left'><i class='fa fa-plus fa-fw'></i> Baris Baru (F7)</button>
+						<h2 style="text-align : right;">Total : <span id='TotalBayar'>Rp. 0</span></h2>
 						<input type="hidden" id='TotalBayarHidden'>
 					</div>
 
 					<div class='row'>
-						<div class='col-sm-7'>
+						<div class='col-sm-6'>
 							<textarea name='catatan' id='catatan' class='form-control' rows='2' placeholder="Catatan Transaksi (Jika Ada)" style='resize: vertical; width:83%;'></textarea>
 							
 							<br />
@@ -314,7 +314,7 @@ if($level !== 'admin')
 								<div class='col-sm-6'>F10 = Simpan Transaksi</div>
 							</div> 
 						</div>
-						<div class='col-sm-5'>
+						<div class='col-sm-6'>
 							<div class="form-horizontal">
 								<div class="form-group">
 									<label class="col-sm-6 control-label">Bayar (F8)</label>
@@ -329,13 +329,13 @@ if($level !== 'admin')
 									</div>
 								</div>
 								<div class='row'>
-									<div class='col-sm-6' style='padding-right: 0px;'>
-										<button type='button' class='btn btn-warning btn-block' id='CetakStruk'>
+									<div class='col-sm-6' >
+										<button type='button' class='btn btn-primary btn-block' id='CetakStruk'>
 											<i class='fa fa-print'></i> Cetak (F9)
 										</button>
 									</div>
 									<div class='col-sm-6'>
-										<button type='button' class='btn btn-default btn-block' id='Simpann'>
+										<button type='button' class='btn btn-success btn-block' id='Simpann'>
 											<i class='fa fa-floppy-o'></i> Simpan (F10)
 										</button>
 									</div>

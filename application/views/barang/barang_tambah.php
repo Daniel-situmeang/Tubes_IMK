@@ -1,6 +1,9 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
 <?php echo form_open('barang/tambah', array('id' => 'FormTambahBarang')); ?>
-<table class='table table-bordered' id='TabelTambahBarang'>
-	<thead>
+<div class='table-responsive-sm'>
+<table class='table table-striped mt-5 table-light text-center' id='TabelTambahBarang'>
+	<thead class="thead-dark">
 		<tr>
 			<th>#</th>
 			<th>Nama Barang</th>
@@ -14,9 +17,10 @@
 	</thead>
 	<tbody></tbody>
 </table>
+</div>
 <?php echo form_close(); ?>
 
-<button id='BarisBaru' class='btn btn-default'>Baris Baru</button>
+<button id='BarisBaru' class='btn btn-primary'>Baris Baru</button>
 <div id='ResponseInput'></div>
 
 <script>
@@ -134,7 +138,7 @@ function BarisBaru()
 	Baris += "<td><input type='text' name='stok[]' class='form-control input-sm' onkeypress='return check_int(event)'></td>";
 	Baris += "<td><input type='text' name='modal[]' class='form-control input-sm' onkeypress='return check_int(event)'></td>";
 	Baris += "<td><input type='text' name='harga[]' class='form-control input-sm' onkeypress='return check_int(event)'></td>";
-	Baris += "<td align='center'><a href='#' id='HapusBaris'><i class='fa fa-times' style='color:red;'></i></a></td>";
+	Baris += "<td align='center'><a href='#' id='HapusBaris' class='btn btn-danger'><i class='fa fa-times'></i></a></td>";
 	Baris += "</tr>";
 
 	$('#TabelTambahBarang tbody').append(Baris);

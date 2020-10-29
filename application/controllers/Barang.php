@@ -37,7 +37,7 @@ class Barang extends MY_Controller
 			if($level == 'admin' OR $level == 'inventory')
 			{
 				$nestedData[]	= "<a href='".site_url('barang/edit/'.$row['id_barang'])."' id='EditBarang'><i class='fa fa-pencil'></i> Edit</a>";
-				$nestedData[]	= "<a href='".site_url('barang/hapus/'.$row['id_barang'])."' id='HapusBarang'><i class='fa fa-trash-o'></i> Hapus</a>";
+				$nestedData[]	= "<a href='".site_url('barang/hapus/'.$row['id_barang'])."' id='HapusBarang'><font color='red'><i class='fa fa-trash-o'></i> Hapus</a></font>";
 			}
 
 			$data[] = $nestedData;
@@ -276,7 +276,7 @@ class Barang extends MY_Controller
 			if($level == 'admin' OR $level == 'inventory')
 			{
 				$nestedData[]	= "<a href='".site_url('barang/edit-kategori/'.$row['id_kategori_barang'])."' id='EditKategori'><i class='fa fa-pencil'></i> Edit</a>";
-				$nestedData[]	= "<a href='".site_url('barang/hapus-kategori/'.$row['id_kategori_barang'])."' id='HapusKategori'><i class='fa fa-trash-o'></i> Hapus</a>";
+				$nestedData[]	= "<a href='".site_url('barang/hapus-kategori/'.$row['id_kategori_barang'])."' id='HapusKategori'><font color='red'><i class='fa fa-trash-o'></i> Hapus</a></font>";
 			}
 
 			$data[] = $nestedData;

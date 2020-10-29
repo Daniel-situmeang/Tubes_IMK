@@ -490,7 +490,7 @@ class Penjualan extends MY_Controller
 
 			if($level == 'admin') 
 			{
-				$nestedData[]	= "<a href='".site_url('penjualan/pelanggan-hapus/'.$row['id_pelanggan'])."' id='HapusPelanggan'><i class='fa fa-trash-o'></i> Hapus</a>";
+				$nestedData[]	= "<a href='".site_url('penjualan/pelanggan-hapus/'.$row['id_pelanggan'])."' id='HapusPelanggan'><font color='red'><i class='fa fa-trash-o'></i> Hapus</font></a>";
 			}
 
 			$data[] = $nestedData;
