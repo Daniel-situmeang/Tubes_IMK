@@ -1,5 +1,42 @@
 <?php $this->load->view('include/header'); ?>
 <style>
+$('#toggle').click(function() {
+  $('.slide-in').toggleClass('show');
+});
+.slide-in {
+  z-index: 10; /* to position it in front of the other content */
+  position: absolute;
+  overflow: hidden; /* to prevent scrollbar appearing */
+}
+
+.slide-in.from-left {
+  left: 0;
+}
+
+.slide-in.from-right {
+  right: 0;
+}
+
+.slide-in-content {
+  padding: 5px 20px;
+  background: #eee;
+  transition: transform .5s ease; /* our nice transition */
+}
+
+.slide-in.from-left .slide-in-content {
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+}
+
+.slide-in.from-right .slide-in-content {
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+}
+
+.slide-in.show .slide-in-content {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+}	
 .slide-wrapper {
     position: relative
 }
@@ -77,17 +114,49 @@
 				<center>
 					<img src="<?php echo config_item('img'); ?>logo.png" />
 				</center>
-			
-					
-			
-			
-			
-			
-			
-			
-			
-			
-				</div>
+				<div class='panel panel-default'>
+					<div class='panel-body'>
+						<?php echo form_open('secure', array('id' => 'FormLogin')); ?>
+							<div class="form-group">
+								<label>Username</label>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class='glyphicon glyphicon-user'></span>
+									</div>
+									<?php 
+									echo form_input(array(
+										'name' => 'username', 
+										'class' => 'form-control', 
+										'autocomplete' => 'off', 
+										'autofocus' => 'autofocus'
+									)); 
+									?>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Password</label>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class='glyphicon glyphicon-lock'></span>
+									</div>
+									<?php 
+									echo form_password(array(
+										'name' => 'password', 
+										'class' => 'form-control', 
+										'id' => 'InputPassword'
+									)); 
+									?>
+								</div>
+							</div>
+
+							<button type="submit" class="btn btn-warning">
+								<span class='glyphicon glyphicon-log-in' aria-hidden="true"></span> Sign In
+							</button>
+							<button type="reset" class="btn btn-default" id='ResetData'>Reset</button>
+						<?php echo form_close(); ?>
+
+						<div id='ResponseInput'></div>
+					</div>
 				</div>
 				
 			</div>
