@@ -64,11 +64,6 @@ $level = $this->session->userdata('ap_level');
 						<li><a class="dropdown-item" href="<?php echo site_url('secure/logout'); ?>"><i class='fa fa-sign-out fa-fw'></i> Log Out</a></li>
 					</ul>
 				</li>
-				<li class="nav-item mr-2 d-none d-lg-block">
-					<a class="nav-link apptogglefullscreen" id="navbar-fullscreen" href="javascript:;">
-						<i class="fa fa-arrows-alt"></i>
-					</a>
-				</li>
 			</ul>
 		</div>
 </nav>
