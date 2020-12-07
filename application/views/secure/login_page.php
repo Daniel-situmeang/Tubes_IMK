@@ -98,7 +98,7 @@
 			<div class="">
 				<center>
 					<br>
-					<img height="85px" src="<?php echo config_item('assets'); ?>bg/9t.png" />
+					<img height="85px" src="<?php echo config_item('assets'); ?>bg/logo.png" />
 				</center>
 				<div class='panel panel-default'>
 					<div class='panel-body'>

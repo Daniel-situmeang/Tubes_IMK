@@ -207,7 +207,7 @@ if($level !== 'admin')
             <div class="card mb-5">
                 <div class="card-header bg-dark">
                     <div class="navbar-form navbar-left">
-                        <h4><font color="#0AB6FF"> <i class="fa fa-qrcode" aria-hidden="true"></i></font><font color="white"> Qrcode Scanner </font></h4>
+                        <h4><font color="#0AB6FF"> <img height="40px" src="<?php echo config_item('assets'); ?>bg/logo.png" /></font><font color="white"> Qrcode Scanner </font></h4>
 						<br>
                     </div>
                     <div class="navbar-form navbar-right">

@@ -10,7 +10,7 @@ $level = $this->session->userdata('ap_level');
 <nav class="navbar navbar-expand-lg navbar-dark" style="  background-image: linear-gradient(270deg, #2839AA, #0AB6FF);">
 	
 			<a class="navbar-brand" href="<?php echo site_url(); ?>">
-			<img height="40px" src="<?php echo config_item('assets'); ?>bg/9w.png" />
+			<img height="40px" src="<?php echo config_item('assets'); ?>bg/logo.png" />
 			</a>
 			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 				<span class="navbar-toggler-icon"></span>

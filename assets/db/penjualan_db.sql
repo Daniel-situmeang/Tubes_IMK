@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2020 at 02:09 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.8
+-- Waktu pembuatan: 07 Des 2020 pada 16.06
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 
 DELIMITER $$
 --
--- Procedures
+-- Prosedur
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `get_detail_penjualan_master` (IN `id_pm` MEDIUMINT(1))  NO SQL
 SELECT 
@@ -133,7 +133,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `p_update_pj_user` (IN `idpu` MEDIUM
 UPDATE `pj_user` SET `username` = user, `password` = pass, `nama` = name, `id_akses` = ida, `status_user` = state WHERE `id_user`= idpu$$
 
 --
--- Functions
+-- Fungsi
 --
 CREATE DEFINER=`root`@`localhost` FUNCTION `f_cek_status_pelanggan` (`state` ENUM('aktif','non aktif')) RETURNS INT(11) BEGIN
 
@@ -197,7 +197,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `log_login`
+-- Struktur dari tabel `log_login`
 --
 
 CREATE TABLE `log_login` (
@@ -209,7 +209,7 @@ CREATE TABLE `log_login` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `log_pj_barang`
+-- Struktur dari tabel `log_pj_barang`
 --
 
 CREATE TABLE `log_pj_barang` (
@@ -226,7 +226,7 @@ CREATE TABLE `log_pj_barang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `log_pj_barang`
+-- Dumping data untuk tabel `log_pj_barang`
 --
 
 INSERT INTO `log_pj_barang` (`id_lpb`, `id_barang`, `nama_barang`, `total_stok`, `modal`, `harga`, `id_kategori_barang`, `id_ukuran`, `status`, `tanggal`) VALUES
@@ -296,12 +296,35 @@ INSERT INTO `log_pj_barang` (`id_lpb`, `id_barang`, `nama_barang`, `total_stok`,
 (65, 'BG0.4068', 'contoh', 20, 3000, '4000', 30, 2, 'INSERT', '2020-10-16 23:44:30'),
 (66, 'BG0.4068', 'contoh', 20, 3000, '4000', 30, 2, 'UPDATE', '2020-10-17 00:43:51'),
 (67, 'BG0.4068', 'contoh', 20, 3000, '4000', 30, 2, 'UPDATE', '2020-10-17 00:46:32'),
-(68, 'BG0.4068', 'contoh', 20, 3000, '4000', 30, 2, 'UPDATE', '2020-10-17 00:51:46');
+(68, 'BG0.4068', 'contoh', 20, 3000, '4000', 30, 2, 'UPDATE', '2020-10-17 00:51:46'),
+(69, 'BG0008', 'Keripik Jagung Pedas 1kg', 49, 18000, '25000', 5, 1, 'UPDATE', '2020-10-24 00:26:39'),
+(70, 'BG0.4068', 'contoh', 20, 3000, '4000', 30, 2, 'UPDATE', '2020-12-07 15:16:10'),
+(71, 'BG0.4068', 'Keripik Apel Lays', 60, 3000, '4000', 1, 1, 'UPDATE', '2020-12-07 15:18:07'),
+(72, 'BG0.4068', 'Keripik Apel Lays', 0, 1000, '4000', 1, 1, 'DELETE', '2020-12-07 15:37:01'),
+(73, 'BG5588', 'Kerupuk Anggur', 0, 9000, '14000', 11, 1, 'DELETE', '2020-12-07 15:37:03'),
+(74, 'BG9030', 'Astor Rasa Cokelat 1/2kg', 0, 9000, '14000', 29, 2, 'DELETE', '2020-12-07 15:37:06'),
+(75, 'BG4083', 'Astor Rasa Cokelat 1kg', 0, 18000, '25000', 29, 1, 'DELETE', '2020-12-07 15:37:08'),
+(76, 'BG0003', 'Keripik Jamur', 0, 5000, '10000', 22, 2, 'DELETE', '2020-12-07 15:37:10'),
+(77, 'BG0004', 'Kuping Gajah 1/2kg', 0, 10000, '14000', 11, 2, 'DELETE', '2020-12-07 15:37:12'),
+(78, 'BG0005', 'Kuping Gajah 1kg', 0, 20000, '28000', 11, 1, 'DELETE', '2020-12-07 15:37:14'),
+(79, 'BG0007', 'Keripik Jagung Manis Ecer 2000', 0, 1000, '2000', 4, 4, 'DELETE', '2020-12-07 15:37:19'),
+(80, 'BG0006', 'Keripik Jagung Pedas Ecer 2000', 0, 1000, '2000', 5, 4, 'DELETE', '2020-12-07 15:37:21'),
+(81, 'BG0010', 'Keripik Jagung Pedas 1/4kg', 0, 4000, '6000', 5, 3, 'DELETE', '2020-12-07 15:37:24'),
+(82, 'BG0009', 'Keripik Jagung Pedas 1/2kg', 0, 9000, '13000', 5, 2, 'DELETE', '2020-12-07 15:37:26'),
+(83, 'BG0008', 'Keripik Jagung Pedas 1kg', 0, 18000, '25000', 5, 1, 'DELETE', '2020-12-07 15:37:28'),
+(84, 'BG0001', 'Makaroni Kari Ecer 2000', 0, 750, '2000', 15, 4, 'DELETE', '2020-12-07 15:37:30'),
+(85, 'BG0016', 'Makaroni Pedas Ecer 2000', 0, 750, '2000', 13, 4, 'DELETE', '2020-12-07 15:37:32'),
+(86, 'BG0015', 'Keripik Gadung', 0, 8000, '12000', 3, 0, 'DELETE', '2020-12-07 15:37:34'),
+(87, 'BG0014', 'Keripik Bayam Hijau', 0, 5000, '10000', 2, 0, 'DELETE', '2020-12-07 15:37:37'),
+(88, 'BG0012', 'Keripik Apel Merah', 0, 9000, '13000', 1, 0, 'DELETE', '2020-12-07 15:37:39'),
+(89, 'BG0011', 'Keripik Apel Hijau', 0, 11000, '15000', 1, 0, 'DELETE', '2020-12-07 15:37:43'),
+(90, 'BG0013', 'Orong - orong 1/4kg', 0, 3000, '7000', 21, 0, 'DELETE', '2020-12-07 15:37:45'),
+(91, 'BG0002', 'Keripik Singkong Kari Ecer ', 0, 750, '1000', 10, 4, 'DELETE', '2020-12-07 15:37:48');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `log_pj_kategori_barang`
+-- Struktur dari tabel `log_pj_kategori_barang`
 --
 
 CREATE TABLE `log_pj_kategori_barang` (
@@ -314,7 +337,7 @@ CREATE TABLE `log_pj_kategori_barang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `log_pj_kategori_barang`
+-- Dumping data untuk tabel `log_pj_kategori_barang`
 --
 
 INSERT INTO `log_pj_kategori_barang` (`id_lpkb`, `id_kategori_barang`, `kategori`, `id_rasa`, `status`, `tanggal`) VALUES
@@ -368,7 +391,7 @@ INSERT INTO `log_pj_kategori_barang` (`id_lpkb`, `id_kategori_barang`, `kategori
 -- --------------------------------------------------------
 
 --
--- Table structure for table `log_pj_pelanggan`
+-- Struktur dari tabel `log_pj_pelanggan`
 --
 
 CREATE TABLE `log_pj_pelanggan` (
@@ -383,19 +406,55 @@ CREATE TABLE `log_pj_pelanggan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `log_pj_pelanggan`
+-- Dumping data untuk tabel `log_pj_pelanggan`
 --
 
 INSERT INTO `log_pj_pelanggan` (`id_lpp`, `id_pelanggan`, `nama`, `alamat`, `telp`, `status_anggota`, `status`, `tanggal`) VALUES
 (1, 9, 'Kodok', 'Test', '0000', 'Aktif', 'DELETE', '2019-06-17 17:06:34'),
 (2, 13, 'Bernard', 'Test', '0000', 'Aktif', 'UPDATE', '2019-06-17 17:09:49'),
 (3, 8388607, 'Malih', 'test', '3434343', 'Aktif', 'DELETE', '2019-06-28 20:29:52'),
-(4, 8388607, 'Melina', 'Jauh', '9900039', 'Non Aktif', 'UPDATE', '2019-06-29 20:10:25');
+(4, 8388607, 'Melina', 'Jauh', '9900039', 'Non Aktif', 'UPDATE', '2019-06-29 20:10:25'),
+(5, 8388607, 'Melina', 'Jauh', '9900039', 'Non Aktif', 'DELETE', '2020-12-07 20:26:03'),
+(6, 8388607, 'Norman', 'Test', '0039349', 'Aktif', 'DELETE', '2020-12-07 20:26:05'),
+(7, 8388607, 'Nani', 'Test\r\n\r\nAja', '0000', 'Aktif', 'DELETE', '2020-12-07 20:26:07'),
+(8, 8388607, 'Bernard', 'Test', '0000', 'Aktif', 'DELETE', '2020-12-07 20:26:10'),
+(9, 8388607, 'Narji', 'Test', '000', 'Aktif', 'DELETE', '2020-12-07 20:26:12'),
+(10, 8388607, 'Brandon', 'Test', '99030', 'Aktif', 'DELETE', '2020-12-07 20:26:13'),
+(11, 8388607, 'Broke', 'Test', '9900', 'Aktif', 'DELETE', '2020-12-07 20:26:15'),
+(12, 8388607, 'Kodok', 'Test', '0000', 'Aktif', 'DELETE', '2020-12-07 20:26:17'),
+(13, 8388607, 'Budi', 'Jatinegara', '8349393439', 'Aktif', 'DELETE', '2020-12-07 20:26:18'),
+(14, 8388607, 'Jamil', 'Berlan', '0934934939', 'Aktif', 'DELETE', '2020-12-07 20:26:20'),
+(15, 8388607, 'Deden', 'Jauh', '990393', 'Aktif', 'DELETE', '2020-12-07 20:26:22'),
+(16, 8388607, 'Mira', 'Pisangan', '09938829232', 'Aktif', 'DELETE', '2020-12-07 20:26:24'),
+(17, 8388607, 'Budi', 'Salemba', '089930393829', 'Aktif', 'DELETE', '2020-12-07 20:26:26'),
+(18, 8388607, 'Joko', 'Kayumanis', '08773682882', 'Aktif', 'DELETE', '2020-12-07 20:26:28'),
+(19, 8388607, 'Pak Jarwo', 'Kemanggisan deket binus', '4353535353', 'Aktif', 'DELETE', '2020-12-07 20:26:30'),
+(20, 8388607, 'Pak Udin', 'Jalan Kayumanis 2 Baru', '08838493439', 'Non Aktif', 'DELETE', '2020-12-07 20:26:32'),
+(21, 22, 'Pokemon', 'Putri Hijau', '082345234523', 'Aktif', 'DELETE', '2020-12-07 20:26:42'),
+(22, 21, 'asdadadasdad', 'test', '324', 'Aktif', 'DELETE', '2020-12-07 20:26:44'),
+(23, 20, 'asda', 'asda', '2342', 'Aktif', 'DELETE', '2020-12-07 20:26:46'),
+(24, 19, 'makak', 'kkk', '999', 'Aktif', 'DELETE', '2020-12-07 20:26:53'),
+(25, 18, 'jaka', 'jaka', '0000', 'Aktif', 'DELETE', '2020-12-07 20:26:55'),
+(26, 17, 'Malih', 'test', '3434343', 'Aktif', 'DELETE', '2020-12-07 20:26:57'),
+(27, 16, 'Melina', 'Jauh', '9900039', 'Aktif', 'DELETE', '2020-12-07 20:26:59'),
+(28, 15, 'Norman', 'Test', '0039349', 'Aktif', 'DELETE', '2020-12-07 20:27:01'),
+(29, 13, 'Bernard Situmeang', 'Jl.Menteng 7 Gg.Kestria No.11', '085673234080', 'Aktif', 'DELETE', '2020-12-07 20:27:02'),
+(30, 14, 'Nani', 'Test\r\n\r\nAja', '0000', 'Aktif', 'DELETE', '2020-12-07 20:27:05'),
+(31, 12, 'Narji', 'Test', '000', 'Aktif', 'DELETE', '2020-12-07 20:27:12'),
+(32, 11, 'Broke', 'Test', '9900', 'Aktif', 'DELETE', '2020-12-07 20:27:14'),
+(33, 10, 'Brandon', 'Mandala By Pass', '087863234321', 'Aktif', 'DELETE', '2020-12-07 20:27:17'),
+(34, 8, 'Budi', 'Jatinegara', '8349393439', 'Aktif', 'DELETE', '2020-12-07 20:27:20'),
+(35, 7, 'Jamil', 'Berlan', '0934934939', 'Aktif', 'DELETE', '2020-12-07 20:27:22'),
+(36, 5, 'Mira', 'Pisangan', '09938829232', 'Aktif', 'DELETE', '2020-12-07 20:27:24'),
+(37, 4, 'Budi', 'Salemba', '089930393829', 'Aktif', 'DELETE', '2020-12-07 20:27:28'),
+(38, 3, 'Joko', 'Kayumanis', '08773682882', 'Aktif', 'DELETE', '2020-12-07 20:27:31'),
+(39, 2, 'Pak Jarwo', 'Kemanggisan deket binus', '4353535353', 'Aktif', 'DELETE', '2020-12-07 20:27:33'),
+(40, 1, 'Pak Udin', 'Jalan Kayumanis 2 Baru', '08838493439', 'Aktif', 'DELETE', '2020-12-07 20:27:36');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `log_pj_user`
+-- Struktur dari tabel `log_pj_user`
 --
 
 CREATE TABLE `log_pj_user` (
@@ -410,18 +469,23 @@ CREATE TABLE `log_pj_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `log_pj_user`
+-- Dumping data untuk tabel `log_pj_user`
 --
 
 INSERT INTO `log_pj_user` (`id_lpu`, `id_user`, `username`, `nama`, `id_akses`, `status_user`, `status`, `tanggal`) VALUES
 (1, '5', 'jaka', 'Jaka Sembung', 3, 'Aktif', 'DELETE', '2019-06-17 17:18:39'),
 (2, '7', 'amir', 'Bagus TBN', 3, '', 'DELETE', '2019-06-28 20:17:56'),
-(3, '6', 'jokowow', 'Love Keuangan', 4, 'Aktif', 'DELETE', '2019-07-02 11:04:40');
+(3, '6', 'jokowow', 'Love Keuangan', 4, 'Aktif', 'DELETE', '2019-07-02 11:04:40'),
+(4, '9', 'julia', 'Julia Chan', 2, 'Aktif', 'DELETE', '2020-12-07 15:41:27'),
+(5, '8', 'sola_joko', 'Rogate Solafide', 4, 'Aktif', 'DELETE', '2020-12-07 15:41:29'),
+(6, '4', 'javic_jaka', 'Javic Rotanson', 3, 'Aktif', 'DELETE', '2020-12-07 15:41:31'),
+(7, '3', 'kasir2', 'Kasir Dua', 2, 'Aktif', 'DELETE', '2020-12-07 15:41:33'),
+(8, '2', 'daisy_kasir', 'Daisy Sere', 2, 'Aktif', 'DELETE', '2020-12-07 15:41:37');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pj_akses`
+-- Struktur dari tabel `pj_akses`
 --
 
 CREATE TABLE `pj_akses` (
@@ -431,7 +495,7 @@ CREATE TABLE `pj_akses` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pj_akses`
+-- Dumping data untuk tabel `pj_akses`
 --
 
 INSERT INTO `pj_akses` (`id_akses`, `label`, `level_akses`) VALUES
@@ -443,7 +507,7 @@ INSERT INTO `pj_akses` (`id_akses`, `label`, `level_akses`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pj_barang`
+-- Struktur dari tabel `pj_barang`
 --
 
 CREATE TABLE `pj_barang` (
@@ -458,33 +522,7 @@ CREATE TABLE `pj_barang` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pj_barang`
---
-
-INSERT INTO `pj_barang` (`id_barang`, `nama_barang`, `total_stok`, `modal`, `harga`, `id_kategori_barang`, `id_ukuran`, `qrcode`) VALUES
-('BG0002', 'Keripik Singkong Kari Ecer ', 69, '750', '1000', 10, 4, ''),
-('BG0013', 'Orong - orong 1/4kg', 30, '3000', '7000', 21, 0, ''),
-('BG0011', 'Keripik Apel Hijau', 10, '11000', '15000', 1, 0, ''),
-('BG0012', 'Keripik Apel Merah', 20, '9000', '13000', 1, 0, ''),
-('BG0014', 'Keripik Bayam Hijau', 15, '5000', '10000', 2, 0, ''),
-('BG0015', 'Keripik Gadung', 30, '8000', '12000', 3, 0, ''),
-('BG0016', 'Makaroni Pedas Ecer 2000', 90, '750', '2000', 13, 4, ''),
-('BG0001', 'Makaroni Kari Ecer 2000', 100, '750', '2000', 15, 4, ''),
-('BG0008', 'Keripik Jagung Pedas 1kg', 49, '18000', '25000', 5, 1, ''),
-('BG0009', 'Keripik Jagung Pedas 1/2kg', 39, '9000', '13000', 5, 2, ''),
-('BG0010', 'Keripik Jagung Pedas 1/4kg', 74, '4000', '6000', 5, 3, ''),
-('BG0006', 'Keripik Jagung Pedas Ecer 2000', 90, '1000', '2000', 5, 4, ''),
-('BG0007', 'Keripik Jagung Manis Ecer 2000', 100, '1000', '2000', 4, 4, ''),
-('BG0005', 'Kuping Gajah 1kg', 20, '20000', '28000', 11, 1, ''),
-('BG0004', 'Kuping Gajah 1/2kg', 40, '10000', '14000', 11, 2, ''),
-('BG0003', 'Keripik Jamur', 20, '5000', '10000', 22, 2, ''),
-('BG4083', 'Astor Rasa Cokelat 1kg', 49, '18000', '25000', 29, 1, ''),
-('BG9030', 'Astor Rasa Cokelat 1/2kg', 50, '9000', '14000', 29, 2, ''),
-('BG5588', 'Kerupuk Anggur', 50, '9000', '14000', 11, 1, ''),
-('BG0.4068', 'contoh', 20, '3000', '4000', 30, 2, 'http://localhost/Kasir/assets/temp/teste5bc9c63e944c57d450fa99e4f0fe193.png');
-
---
--- Triggers `pj_barang`
+-- Trigger `pj_barang`
 --
 DELIMITER $$
 CREATE TRIGGER `t_delete_pj_barang` BEFORE DELETE ON `pj_barang` FOR EACH ROW BEGIN 
@@ -553,7 +591,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pj_ci_sessions`
+-- Struktur dari tabel `pj_ci_sessions`
 --
 
 CREATE TABLE `pj_ci_sessions` (
@@ -564,7 +602,7 @@ CREATE TABLE `pj_ci_sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pj_ci_sessions`
+-- Dumping data untuk tabel `pj_ci_sessions`
 --
 
 INSERT INTO `pj_ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
@@ -582,12 +620,28 @@ INSERT INTO `pj_ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
 ('k35m37igq1ng2thm9m5r6rn31874v122', '::1', 1602871624, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630323837313632343b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b),
 ('1t1ff402v2j32ucmpge1fctr3ldqvgsj', '::1', 1602871939, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630323837313933393b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b),
 ('2ugit1hs3eqe2ago1eevb22c5osrqhdj', '::1', 1602871948, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630323837313933393b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b),
-('8efuh0kbh15bnqgregvrh73a8lgim3al', '::1', 1602900378, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630323930303331323b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b);
+('8efuh0kbh15bnqgregvrh73a8lgim3al', '::1', 1602900378, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630323930303331323b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b),
+('ofbed9od6o5vmjp73v7l1ob3pk68haqi', '::1', 1603111227, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630333131313232373b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b),
+('qsj0oeqvngfqvqvp5n2980gu3bvdv61e', '::1', 1603111227, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630333131313232373b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b),
+('1lp8spidq1r0str2c82fu0abdhbofqin', '::1', 1603473959, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630333437333935393b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b),
+('p391tsrrkvk62dkso6dps3votjtji4fu', '::1', 1603474005, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630333437333935393b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b),
+('1k8di7m277um3jl5miu6qdck1nct8h0k', '::1', 1603992700, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630333939323730303b),
+('petl7enkanjjam04doa8j3vtaa00ener', '::1', 1603993085, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630333939333038353b),
+('ppi83nq8iv75dgbsd1gv4d0apjfhsper', '::1', 1603993459, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630333939333435393b),
+('11ckl1i6esau3pos79r0s56rsghrs2ib', '::1', 1603993626, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630333939333435393b),
+('hr7ael982ja92qkoc8k2g630tdub41ud', '::1', 1607329356, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630373332393335363b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b),
+('nl7gddh4b7joptslfgcor0s3sv5s4gp7', '::1', 1607330019, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630373333303031393b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b),
+('nab94lc6ea9844sth96k8vo2vufctpel', '::1', 1607329486, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630373332393436303b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b),
+('vh4ljo1elkqrqfh2gn4sc4omag6s2mp8', '::1', 1607330448, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630373333303434383b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b),
+('417hvuvk6tkr6j6ct5jdcr52cjhumt7v', '::1', 1607340704, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630373334303730343b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b),
+('593nqndjqd9oevfqm7lcfcunr5p1tdap', '::1', 1607341369, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630373334313336393b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b),
+('bjiksm1faebvcfd48o641kkiblpub64v', '::1', 1607347533, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630373334373533333b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b),
+('ceohm3pg47ohkm4jfrfnnp2el394et7b', '::1', 1607347656, 0x5f5f63695f6c6173745f726567656e65726174657c693a313630373334373533333b61705f69645f757365727c733a313a2231223b61705f70617373776f72647c733a34303a2264303333653232616533343861656235363630666332313430616563333538353063346461393937223b61705f6e616d617c733a353a2241646d696e223b61705f6c6576656c7c733a353a2261646d696e223b61705f6c6576656c5f63617074696f6e7c733a31333a2241646d696e6973747261746f72223b);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pj_kategori_barang`
+-- Struktur dari tabel `pj_kategori_barang`
 --
 
 CREATE TABLE `pj_kategori_barang` (
@@ -597,7 +651,7 @@ CREATE TABLE `pj_kategori_barang` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pj_kategori_barang`
+-- Dumping data untuk tabel `pj_kategori_barang`
 --
 
 INSERT INTO `pj_kategori_barang` (`id_kategori_barang`, `kategori`, `id_rasa`) VALUES
@@ -628,7 +682,7 @@ INSERT INTO `pj_kategori_barang` (`id_kategori_barang`, `kategori`, `id_rasa`) V
 (31, 'Keripik Pasta Balado', 2);
 
 --
--- Triggers `pj_kategori_barang`
+-- Trigger `pj_kategori_barang`
 --
 DELIMITER $$
 CREATE TRIGGER `t_delete_pj_kategori` BEFORE DELETE ON `pj_kategori_barang` FOR EACH ROW BEGIN 
@@ -667,7 +721,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pj_kategori_rasa`
+-- Struktur dari tabel `pj_kategori_rasa`
 --
 
 CREATE TABLE `pj_kategori_rasa` (
@@ -676,7 +730,7 @@ CREATE TABLE `pj_kategori_rasa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pj_kategori_rasa`
+-- Dumping data untuk tabel `pj_kategori_rasa`
 --
 
 INSERT INTO `pj_kategori_rasa` (`id_rasa`, `nama_rasa`) VALUES
@@ -689,7 +743,7 @@ INSERT INTO `pj_kategori_rasa` (`id_rasa`, `nama_rasa`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pj_kategori_ukuran`
+-- Struktur dari tabel `pj_kategori_ukuran`
 --
 
 CREATE TABLE `pj_kategori_ukuran` (
@@ -698,7 +752,7 @@ CREATE TABLE `pj_kategori_ukuran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pj_kategori_ukuran`
+-- Dumping data untuk tabel `pj_kategori_ukuran`
 --
 
 INSERT INTO `pj_kategori_ukuran` (`id_ukuran`, `ukuran`) VALUES
@@ -711,7 +765,7 @@ INSERT INTO `pj_kategori_ukuran` (`id_ukuran`, `ukuran`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pj_pelanggan`
+-- Struktur dari tabel `pj_pelanggan`
 --
 
 CREATE TABLE `pj_pelanggan` (
@@ -725,50 +779,14 @@ CREATE TABLE `pj_pelanggan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pj_pelanggan`
+-- Dumping data untuk tabel `pj_pelanggan`
 --
 
 INSERT INTO `pj_pelanggan` (`id_pelanggan`, `nama`, `alamat`, `telp`, `info_tambahan`, `waktu_input`, `status_anggota`) VALUES
-('1', 'Pak Udin', 'Jalan Kayumanis 2 Baru', '08838493439', 'Testtt', '2016-05-07 22:44:25', 'Aktif'),
-('2', 'Pak Jarwo', 'Kemanggisan deket binus', '4353535353', NULL, '2016-05-07 22:44:49', 'Aktif'),
-('3', 'Joko', 'Kayumanis', '08773682882', '', '2016-05-23 16:31:47', 'Aktif'),
-('4', 'Budi', 'Salemba', '089930393829', 'Testing', '2016-05-23 16:33:00', 'Aktif'),
-('5', 'Mira', 'Pisangan', '09938829232', '', '2016-05-23 16:36:45', 'Aktif'),
-('7', 'Jamil', 'Berlan', '0934934939', '', '2016-05-24 21:24:54', 'Aktif'),
-('8', 'Budi', 'Jatinegara', '8349393439', '', '2016-05-24 21:25:32', 'Aktif'),
-('10', 'Brandon', 'Mandala By Pass', '087863234321', '', '2019-06-17 00:00:00', 'Aktif'),
-('11', 'Broke', 'Test', '9900', 'Test', '2016-05-24 21:35:48', 'Aktif'),
-('12', 'Narji', 'Test', '000', 'Test', '2016-05-24 21:37:20', 'Aktif'),
-('13', 'Bernard Situmeang', 'Jl.Menteng 7 Gg.Kestria No.11', '085673234080', '', '2019-06-17 00:00:00', 'Aktif'),
-('14', 'Nani', 'Test\r\n\r\nAja', '0000', 'Test\r\n\r\nAja', '2016-05-24 21:54:15', 'Aktif'),
-('15', 'Norman', 'Test', '0039349', '', '2016-05-24 21:55:31', 'Aktif'),
-('16', 'Melina', 'Jauh', '9900039', 'Test', '2016-06-17 19:58:07', 'Aktif'),
-('17', 'Malih', 'test', '3434343', '', '2016-09-04 15:12:00', 'Aktif'),
-('18', 'jaka', 'jaka', '0000', 'jaka', '2016-09-04 15:13:08', 'Aktif'),
-('19', 'makak', 'kkk', '999', 'kakad', '2016-09-04 15:13:46', 'Aktif'),
-('20', 'asda', 'asda', '2342', 'asdad', '2016-09-04 15:13:57', 'Aktif'),
-('21', 'asdadadasdad', 'test', '324', 'asdadad', '2016-09-04 15:14:08', 'Aktif'),
-('22', 'Pokemon', 'Putri Hijau', '082345234523', 'Anggota baru', '2019-06-17 14:16:26', 'Aktif'),
-('SLS66779', 'Jarwo Sungirep', 'Jalan Bahagia Penuh No.80', '082399880055', NULL, '2019-06-16 14:34:04', 'Aktif'),
-('566667788', 'Pak Udin', 'Jalan Kayumanis 2 Baru', '08838493439', 'Testtt', '2016-05-07 22:44:25', 'Non Aktif'),
-('566667789', 'Pak Jarwo', 'Kemanggisan deket binus', '4353535353', NULL, '2016-05-07 22:44:49', 'Aktif'),
-('566667790', 'Joko', 'Kayumanis', '08773682882', '', '2016-05-23 16:31:47', 'Aktif'),
-('566667791', 'Budi', 'Salemba', '089930393829', 'Testing', '2016-05-23 16:33:00', 'Aktif'),
-('566667792', 'Mira', 'Pisangan', '09938829232', '', '2016-05-23 16:36:45', 'Aktif'),
-('566667793', 'Deden', 'Jauh', '990393', 'Test', '2016-05-24 20:54:58', 'Aktif'),
-('1464099894', 'Jamil', 'Berlan', '0934934939', '', '2016-05-24 21:24:54', 'Aktif'),
-('1464099932', 'Budi', 'Jatinegara', '8349393439', '', '2016-05-24 21:25:32', 'Aktif'),
-('1464100327', 'Kodok', 'Test', '0000', '', '2016-05-24 21:32:07', 'Aktif'),
-('1464100548', 'Broke', 'Test', '9900', 'Test', '2016-05-24 21:35:48', 'Aktif'),
-('1464100340', 'Brandon', 'Test', '99030', '', '2016-05-24 21:32:20', 'Aktif'),
-('1464100640', 'Narji', 'Test', '000', 'Test', '2016-05-24 21:37:20', 'Aktif'),
-('1464100665', 'Bernard', 'Test', '0000', 'test', '2016-05-24 21:37:45', 'Aktif'),
-('1464101655', 'Nani', 'Test\r\n\r\nAja', '0000', 'Test\r\n\r\nAja', '2016-05-24 21:54:15', 'Aktif'),
-('1464101731', 'Norman', 'Test', '0039349', '', '2016-05-24 21:55:31', 'Aktif'),
-('1466168287', 'Melina', 'Jauh', '9900039', 'Test', '2016-06-17 19:58:07', 'Non Aktif');
+('SLS66779', 'Jarwo Sungirep', 'Jalan Bahagia Penuh No.80', '082399880055', NULL, '2019-06-16 14:34:04', 'Aktif');
 
 --
--- Triggers `pj_pelanggan`
+-- Trigger `pj_pelanggan`
 --
 DELIMITER $$
 CREATE TRIGGER `t_delete_pj_pelanggan` BEFORE DELETE ON `pj_pelanggan` FOR EACH ROW BEGIN 
@@ -802,7 +820,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pj_penjualan_detail`
+-- Struktur dari tabel `pj_penjualan_detail`
 --
 
 CREATE TABLE `pj_penjualan_detail` (
@@ -815,7 +833,7 @@ CREATE TABLE `pj_penjualan_detail` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pj_penjualan_detail`
+-- Dumping data untuk tabel `pj_penjualan_detail`
 --
 
 INSERT INTO `pj_penjualan_detail` (`id_penjualan_d`, `id_penjualan_m`, `id_barang`, `jumlah_beli`, `harga_satuan`, `total`) VALUES
@@ -838,18 +856,12 @@ INSERT INTO `pj_penjualan_detail` (`id_penjualan_d`, `id_penjualan_m`, `id_baran
 (20, 10, '3', 1, '350000', '350000'),
 (21, 11, '1', 1, '400000', '400000'),
 (22, 11, '3', 1, '350000', '350000'),
-(23, 12, '3', 2, '350000', '700000'),
-(31, 20, 'BG0002', 20, '1000', '20000'),
-(27, 16, 'BRG0006', 1, '13000', '13000'),
-(28, 17, 'BRG0007', 6, '6000', '36000'),
-(30, 19, 'BG0011', 10, '15000', '150000'),
-(32, 20, 'BG0008', 1, '25000', '25000'),
-(33, 21, 'BG4083', 1, '25000', '25000');
+(23, 12, '3', 2, '350000', '700000');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pj_penjualan_master`
+-- Struktur dari tabel `pj_penjualan_master`
 --
 
 CREATE TABLE `pj_penjualan_master` (
@@ -864,21 +876,10 @@ CREATE TABLE `pj_penjualan_master` (
   `id_user` mediumint(1) UNSIGNED NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `pj_penjualan_master`
---
-
-INSERT INTO `pj_penjualan_master` (`id_penjualan_m`, `nomor_nota`, `tanggal`, `grand_modal`, `grand_total`, `bayar`, `keterangan_lain`, `id_pelanggan`, `id_user`) VALUES
-(21, '5D1CDBE83D1A41', '2019-07-03 18:46:32', 18000, '25000', '100000', '', NULL, 1),
-(20, '5D1ADD544216C2', '2019-07-02 06:28:04', 33000, '45000', '50000', '', 16777215, 2),
-(16, '5D11391709AFE1', '2019-06-24 22:56:55', 9000, '13000', '50000', '', 7, 1),
-(17, '5D113965C9A951', '2019-06-24 22:58:13', 24000, '36000', '50000', '', NULL, 1),
-(19, '5D183C34D2E921', '2019-06-30 06:36:04', 110000, '150000', '200000', '', NULL, 1);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pj_user`
+-- Struktur dari tabel `pj_user`
 --
 
 CREATE TABLE `pj_user` (
@@ -891,19 +892,14 @@ CREATE TABLE `pj_user` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pj_user`
+-- Dumping data untuk tabel `pj_user`
 --
 
 INSERT INTO `pj_user` (`id_user`, `username`, `password`, `nama`, `id_akses`, `status_user`) VALUES
-(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Admin', 1, 'Aktif'),
-(2, 'daisy_kasir', '8691e4fc53b99da544ce86e22acba62d13352eff', 'Daisy Sere', 2, 'Aktif'),
-(3, 'kasir2', '08dfc5f04f9704943a423ea5732b98d3567cbd49', 'Kasir Dua', 2, 'Aktif'),
-(4, 'javic_jaka', '2ec22095503fe843326e7c19dd2ab98716b63e4d', 'Javic Rotanson', 3, 'Aktif'),
-(8, 'sola_joko', '97c358728f7f947c9a279ba9be88308395c7cc3a', 'Rogate Solafide', 4, 'Aktif'),
-(9, 'julia', '6c294710caf584d8c0ad95d6f539b5e0f224a6f9', 'Julia Chan', 2, 'Aktif');
+(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Admin', 1, 'Aktif');
 
 --
--- Triggers `pj_user`
+-- Trigger `pj_user`
 --
 DELIMITER $$
 CREATE TRIGGER `t_delete_pj_user` BEFORE DELETE ON `pj_user` FOR EACH ROW BEGIN 
@@ -923,8 +919,8 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `v_akses_aplikasi`
--- (See below for the actual view)
+-- Stand-in struktur untuk tampilan `v_akses_aplikasi`
+-- (Lihat di bawah untuk tampilan aktual)
 --
 CREATE TABLE `v_akses_aplikasi` (
 `staff_bagian` varchar(10)
@@ -933,8 +929,8 @@ CREATE TABLE `v_akses_aplikasi` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `v_penjualan_detail`
--- (See below for the actual view)
+-- Stand-in struktur untuk tampilan `v_penjualan_detail`
+-- (Lihat di bawah untuk tampilan aktual)
 --
 CREATE TABLE `v_penjualan_detail` (
 `id_penjualan_d` int(1) unsigned
@@ -948,8 +944,8 @@ CREATE TABLE `v_penjualan_detail` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `v_transaksi`
--- (See below for the actual view)
+-- Stand-in struktur untuk tampilan `v_transaksi`
+-- (Lihat di bawah untuk tampilan aktual)
 --
 CREATE TABLE `v_transaksi` (
 `ID Transaksi` int(1) unsigned
@@ -965,7 +961,7 @@ CREATE TABLE `v_transaksi` (
 -- --------------------------------------------------------
 
 --
--- Structure for view `v_akses_aplikasi`
+-- Struktur untuk view `v_akses_aplikasi`
 --
 DROP TABLE IF EXISTS `v_akses_aplikasi`;
 
@@ -974,7 +970,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Structure for view `v_penjualan_detail`
+-- Struktur untuk view `v_penjualan_detail`
 --
 DROP TABLE IF EXISTS `v_penjualan_detail`;
 
@@ -983,7 +979,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Structure for view `v_transaksi`
+-- Struktur untuk view `v_transaksi`
 --
 DROP TABLE IF EXISTS `v_transaksi`;
 
@@ -994,37 +990,37 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 
 --
--- Indexes for table `log_pj_barang`
+-- Indeks untuk tabel `log_pj_barang`
 --
 ALTER TABLE `log_pj_barang`
   ADD PRIMARY KEY (`id_lpb`);
 
 --
--- Indexes for table `log_pj_kategori_barang`
+-- Indeks untuk tabel `log_pj_kategori_barang`
 --
 ALTER TABLE `log_pj_kategori_barang`
   ADD PRIMARY KEY (`id_lpkb`);
 
 --
--- Indexes for table `log_pj_pelanggan`
+-- Indeks untuk tabel `log_pj_pelanggan`
 --
 ALTER TABLE `log_pj_pelanggan`
   ADD PRIMARY KEY (`id_lpp`);
 
 --
--- Indexes for table `log_pj_user`
+-- Indeks untuk tabel `log_pj_user`
 --
 ALTER TABLE `log_pj_user`
   ADD PRIMARY KEY (`id_lpu`);
 
 --
--- Indexes for table `pj_akses`
+-- Indeks untuk tabel `pj_akses`
 --
 ALTER TABLE `pj_akses`
   ADD PRIMARY KEY (`id_akses`);
 
 --
--- Indexes for table `pj_barang`
+-- Indeks untuk tabel `pj_barang`
 --
 ALTER TABLE `pj_barang`
   ADD PRIMARY KEY (`id_barang`),
@@ -1032,38 +1028,38 @@ ALTER TABLE `pj_barang`
   ADD KEY `id_ukuran` (`id_ukuran`);
 
 --
--- Indexes for table `pj_ci_sessions`
+-- Indeks untuk tabel `pj_ci_sessions`
 --
 ALTER TABLE `pj_ci_sessions`
   ADD KEY `ci_sessions_timestamp` (`timestamp`);
 
 --
--- Indexes for table `pj_kategori_barang`
+-- Indeks untuk tabel `pj_kategori_barang`
 --
 ALTER TABLE `pj_kategori_barang`
   ADD PRIMARY KEY (`id_kategori_barang`),
   ADD KEY `id_rasa` (`id_rasa`);
 
 --
--- Indexes for table `pj_kategori_rasa`
+-- Indeks untuk tabel `pj_kategori_rasa`
 --
 ALTER TABLE `pj_kategori_rasa`
   ADD PRIMARY KEY (`id_rasa`);
 
 --
--- Indexes for table `pj_kategori_ukuran`
+-- Indeks untuk tabel `pj_kategori_ukuran`
 --
 ALTER TABLE `pj_kategori_ukuran`
   ADD PRIMARY KEY (`id_ukuran`);
 
 --
--- Indexes for table `pj_pelanggan`
+-- Indeks untuk tabel `pj_pelanggan`
 --
 ALTER TABLE `pj_pelanggan`
   ADD PRIMARY KEY (`id_pelanggan`);
 
 --
--- Indexes for table `pj_penjualan_detail`
+-- Indeks untuk tabel `pj_penjualan_detail`
 --
 ALTER TABLE `pj_penjualan_detail`
   ADD PRIMARY KEY (`id_penjualan_d`),
@@ -1071,72 +1067,72 @@ ALTER TABLE `pj_penjualan_detail`
   ADD KEY `id_barang` (`id_barang`);
 
 --
--- Indexes for table `pj_penjualan_master`
+-- Indeks untuk tabel `pj_penjualan_master`
 --
 ALTER TABLE `pj_penjualan_master`
   ADD PRIMARY KEY (`id_penjualan_m`);
 
 --
--- Indexes for table `pj_user`
+-- Indeks untuk tabel `pj_user`
 --
 ALTER TABLE `pj_user`
   ADD PRIMARY KEY (`id_user`),
   ADD KEY `id_akses` (`id_akses`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `log_pj_barang`
+-- AUTO_INCREMENT untuk tabel `log_pj_barang`
 --
 ALTER TABLE `log_pj_barang`
-  MODIFY `id_lpb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id_lpb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
--- AUTO_INCREMENT for table `log_pj_kategori_barang`
+-- AUTO_INCREMENT untuk tabel `log_pj_kategori_barang`
 --
 ALTER TABLE `log_pj_kategori_barang`
   MODIFY `id_lpkb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- AUTO_INCREMENT for table `log_pj_pelanggan`
+-- AUTO_INCREMENT untuk tabel `log_pj_pelanggan`
 --
 ALTER TABLE `log_pj_pelanggan`
-  MODIFY `id_lpp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_lpp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
--- AUTO_INCREMENT for table `log_pj_user`
+-- AUTO_INCREMENT untuk tabel `log_pj_user`
 --
 ALTER TABLE `log_pj_user`
-  MODIFY `id_lpu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_lpu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `pj_akses`
+-- AUTO_INCREMENT untuk tabel `pj_akses`
 --
 ALTER TABLE `pj_akses`
   MODIFY `id_akses` tinyint(1) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `pj_kategori_barang`
+-- AUTO_INCREMENT untuk tabel `pj_kategori_barang`
 --
 ALTER TABLE `pj_kategori_barang`
   MODIFY `id_kategori_barang` mediumint(1) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT for table `pj_penjualan_detail`
+-- AUTO_INCREMENT untuk tabel `pj_penjualan_detail`
 --
 ALTER TABLE `pj_penjualan_detail`
-  MODIFY `id_penjualan_d` int(1) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_penjualan_d` int(1) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- AUTO_INCREMENT for table `pj_penjualan_master`
+-- AUTO_INCREMENT untuk tabel `pj_penjualan_master`
 --
 ALTER TABLE `pj_penjualan_master`
-  MODIFY `id_penjualan_m` int(1) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_penjualan_m` int(1) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT for table `pj_user`
+-- AUTO_INCREMENT untuk tabel `pj_user`
 --
 ALTER TABLE `pj_user`
   MODIFY `id_user` mediumint(1) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
