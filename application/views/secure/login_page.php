@@ -104,7 +104,7 @@ $('#toggle').click(function() {
 </style>
 <style>
 	body{
-	background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(<?php echo config_item('assets'); ?>bg/bg2.jpg); 
+	background: url(<?php echo config_item('assets'); ?>bg/bg4.png); 
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -112,7 +112,11 @@ $('#toggle').click(function() {
 
 }
 .login-panel{
-	background: linear-gradient(rgba(79, 185, 183, 0.5),rgba(79, 185, 183, 0.5)); 
+	box-shadow: 0 0 50px black;
+}
+
+.bg-gambar{
+	background-image: linear-gradient(180deg, #213754, #213754);
 }
 </style>	
 
@@ -123,7 +127,12 @@ $('#toggle').click(function() {
 	<div class="karusel">
 		<div class="container-fluid">
 			<br><br><br><br><br><br>
-			<div class="login-panel">
+			<div class="row login-panel">
+			<div class="col-5 bg-gambar">
+			<img src="<?php echo config_item('assets'); ?>bg/landing.png" alt="Responsive image" class="">
+			</div>
+			<div class="col-12 col-lg-7 bg-light ">
+			<div class="">
 				<center>
 					<br>
 					<img src="<?php echo config_item('img'); ?>logo.png" />
@@ -184,6 +193,8 @@ $('#toggle').click(function() {
 				
 =======
 >>>>>>> 1ad8e2f991ee0c804ffabad18349547fc8ae6242
+			</div>
+			</div>
 			</div>
 		</div>
 		     
