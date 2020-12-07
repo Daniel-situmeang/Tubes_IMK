@@ -1,5 +1,5 @@
 /*!
- * WebCodeCamJS 2.1.0 javascript Bar code and QR code decoder 
+ * WebCodeCamJS 2.1.0 javascript Bar code and QR code decoder
  * Author: Tóth András
  * Web: http://atandrastoth.co.uk
  * email: atandrastoth@gmail.com
@@ -51,14 +51,14 @@
                 }, 300);
             });
             scannedImg.src = res.imgData;
-            
+
             // AutoCompleteGue(0, 1, 1);
-            console.log(indexSekarang);
+            // console.log(indexSekarang);
             var Indexnya = indexSekarang;
 
             $.post(document.location.href + '/cari_id', {id: res.code}, function(response) {
                 var data = JSON.parse(response);
-                console.log(data.status);
+                // console.log(data);
                 if (data.status == "true") {
                     var now = $('#TabelTransaksi tbody tr').length;
                     if (Indexnya > now-1) {
@@ -66,8 +66,13 @@
                         $('html, body').animate({ scrollTop: $(document).height() }, 0);
                         indexSekarang = $('#TabelTransaksi tbody tr').length-1;
                     }
+
+                    var dataProduk = "<input type='text' class='form-control' value='"+data.id+"' name='id_barang[]' id='pencarian_kode' placeholder='Ketik Kode / Nama Barang'><div id='hasil_pencarian' style='width: 190.333px; display: none;'><ul id='daftar-autocomplete'><li><b>Kode</b> : <span id='kodenya'>+data.id+</span> <br><span id='barangnya'>"+data.nama+"</span><span id='harganya' style='display:none;'>"+data.harga+"</span></li></ul></div></td>";
+                    var dataHarga = "<input type='hidden' name='harga_satuan[]' value='"+data.harga+"'><span>Rp. "+data.harga+"</span></td>";
+                    var dataKuantitas = "<td><input type='text' class='form-control' id='jumlah_beli' name='jumlah_beli[]' value onkeypress='return check_int(event)'>"
+
                     $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(2)').find('div#hasil_pencarian').hide();
-                    $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(2)').html(data.id);
+                    $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(2)').html(dataProduk);
                     $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(3)').html(data.nama);
                     $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(4) input').val(data.harga);
                     $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(4) span').html(to_rupiah(data.harga));
@@ -86,10 +91,10 @@
                         $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(5) input').focus();
                     }
 
-                    HitungTotalBayar();        
+                    HitungTotalBayar();
                 }else{
                     console.log('salah');
-                    scannedQR[txt] = res.format + ": " + res.code + " ( Produk tidak ditemukan ) ";        
+                    scannedQR[txt] = res.format + ": " + res.code + " ( Produk tidak ditemukan ) ";
                 }
             });
         },
