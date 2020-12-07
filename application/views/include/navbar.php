@@ -2,8 +2,12 @@
 $controller = $this->router->fetch_class();
 $level = $this->session->userdata('ap_level');
 ?>
-
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #FF8C00">
+<style>
+.bg-menu{
+	background-image: linear-gradient(180deg, #213754, #213754);
+}
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark" style="  background-image: linear-gradient(270deg, #2839AA, #0AB6FF);">
 	
 			<a class="navbar-brand" href="<?php echo site_url(); ?>">
 				<img alt="<?php echo config_item('web_title'); ?>" src="<?php echo config_item('img'); ?>logo_small.png">
@@ -17,7 +21,7 @@ $level = $this->session->userdata('ap_level');
 			<ul class="navbar-nav mr-auto">
 
 				<?php if($level == 'admin' OR $level == 'keuangan' OR $level == 'kasir') { ?>
-				<li class="nav-item dropdown <?php if($controller == 'penjualan') { echo 'bg-dark active'; } ?>">
+				<li class="nav-item dropdown <?php if($controller == 'penjualan') { echo 'bg-menu active'; } ?>">
 					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="penjualan" ><i class='fa fa-shopping-cart fa-fw'></i> Penjualan <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<?php if($level !== 'keuangan'){ ?>
@@ -30,7 +34,7 @@ $level = $this->session->userdata('ap_level');
 				</li>
 				<?php } ?>
 
-				<li class="nav-item dropdown <?php if($controller == 'barang') { echo 'bg-dark active'; } ?>">
+				<li class="nav-item dropdown <?php if($controller == 'barang') { echo 'bg-menu active'; } ?>">
 					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class='fa fa-cube fa-fw'></i> Barang <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="<?php echo site_url('barang'); ?>">Semua Barang</a></li>
@@ -40,7 +44,7 @@ $level = $this->session->userdata('ap_level');
 				</li>
 
 				<?php if($level == 'admin' OR $level == 'keuangan') { ?>
-				<li class="nav-item dropdown <?php if($controller == 'laporan') { echo 'bg-dark active'; } ?>">
+				<li class="nav-item dropdown <?php if($controller == 'laporan') { echo 'bg-menu active'; } ?>">
 					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class='fa fa-file-text-o fa-fw'></i> Laporan <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="<?php echo site_url('laporan'); ?>">Laporan Penjualan</a></li>
@@ -50,7 +54,7 @@ $level = $this->session->userdata('ap_level');
 				<?php } ?>
 
 				<?php if($level == 'admin') { ?>
-				<li <?php if($controller == 'user') { echo "class='nav-item bg-dark active'"; } ?>><a  class="nav-link" href="<?php echo site_url('user'); ?>"><i class='fa fa-users fa-fw'></i> List User</a></li>
+				<li <?php if($controller == 'user') { echo "class='nav-item bg-menu active'"; } ?>><a  class="nav-link" href="<?php echo site_url('user'); ?>"><i class='fa fa-users fa-fw'></i> List User</a></li>
 				<?php } ?>
 			</ul>
 
@@ -80,16 +84,16 @@ $(document).on('click', '#GantiPass', function(e){
 	$('#ModalGue').modal('show');
 });
 </script>
-<style>
+<!-- <style>
 	body{
-	background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(<?php echo config_item('assets'); ?>bg/bg1.jpg); 
+	background:url(<?php echo config_item('assets'); ?>bg/ay.png); 
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 
 }
-</style>
+</style> -->
 <body>
 	
 

@@ -30,7 +30,7 @@ if($level !== 'admin')
 			<div class='row'>
 				<div class='col-sm-3'>
 					<div class="card mb-5">
-						<div class="card-header" style="background-color: #FF8C00"><font color="white"><i class='fa fa-file-text-o fa-fw'></i><b> Informasi Nota</b></font></div>
+						<div class="card-header" style="background-image: linear-gradient(270deg, #2839AA, #0AB6FF);"><font color="white"><i class='fa fa-file-text-o fa-fw'></i><b> Informasi Nota</b></font></div>
 						<div class="card-body">
 
 							<div class="form-horizontal">
@@ -72,7 +72,7 @@ if($level !== 'admin')
 						</div>
 					</div>
 					<div class="card" id='PelangganArea'>
-						<div class="card-header" style="background-color: #FF8C00"><font color="white"><i class='fa fa-user'></i> Informasi Pelanggan</font></div>
+						<div class="card-header" style="background-image: linear-gradient(270deg, #2839AA, #0AB6FF);"><font color="white"><i class='fa fa-user'></i> Informasi Pelanggan</font></div>
 						<div class="card-body">
 							<div class="form-group">
 								<label>Pelanggan</label>
@@ -121,7 +121,7 @@ if($level !== 'admin')
 						</div>
 					</div>
 				</div>
-				<div class='col-sm-9 bg-light'>
+				<div class='col-sm-9'>
 					<br>
 					<script src="<?php echo base_url(); ?>js/BarcodeReader.js"></script>
   <script>
@@ -207,7 +207,7 @@ if($level !== 'admin')
             <div class="card mb-5">
                 <div class="card-header bg-dark">
                     <div class="navbar-form navbar-left">
-                        <h4><font color="orange"> <i class="fa fa-qrcode" aria-hidden="true"></i></font><font color="white"> Qrcode Scanner </font></h4>
+                        <h4><font color="#0AB6FF"> <i class="fa fa-qrcode" aria-hidden="true"></i></font><font color="white"> Qrcode Scanner </font></h4>
 						<br>
                     </div>
                     <div class="navbar-form navbar-right">
@@ -283,8 +283,8 @@ if($level !== 'admin')
 						<a href="<?php echo site_url('penjualan/transaksi'); ?>" class='pull-right'><i class='fa fa-refresh fa-fw'></i> Refresh Halaman</a>
 					</h3>
 					<div class="table-responsive-sm">
-					<table class='table table-striped table-bordered ' id='TabelTransaksi'>
-						<thead class="thead-dark">
+					<table class='table table-dark table-striped table-bordered ' id='TabelTransaksi'>
+						<thead style="  background-image: linear-gradient(270deg, #2839AA, #0AB6FF);">
 							<tr>
 								<th style='width:35px;'>#</th>
 								<th style='width:210px;'>Kode Barang</th>
