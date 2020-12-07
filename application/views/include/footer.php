@@ -10,7 +10,7 @@
 		<div class="modal fade" id="ModalGue" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					<div class="modal-header" style="background-color: #FF8C00">
+					<div class="modal-header" style="background-image: linear-gradient(270deg, #2839AA, #0AB6FF);">
 						<h4 class="modal-title" style="color:white;" id="ModalHeader"></h4>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>

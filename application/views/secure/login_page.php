@@ -104,7 +104,7 @@ $('#toggle').click(function() {
 </style>
 <style>
 	body{
-	background: url(<?php echo config_item('assets'); ?>bg/bg4.png); 
+	background: url(<?php echo config_item('assets'); ?>bg/bgkan.png); 
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -135,7 +135,7 @@ $('#toggle').click(function() {
 			<div class="">
 				<center>
 					<br>
-					<img src="<?php echo config_item('img'); ?>logo.png" />
+					<img height="85px" src="<?php echo config_item('assets'); ?>bg/logo.png" />
 				</center>
 				<div class='panel panel-default'>
 					<div class='panel-body'>

@@ -16,7 +16,7 @@ $level = $this->session->userdata('ap_level');
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
 			<div class='table-responsive-sm'>
 				<table id="my-grid" class="table table-striped table-bordered mt-5 table-dark text-center">
-				<thead style="background-color: #FF8C00">
+				<thead style="background-image: linear-gradient(270deg, #2839AA, #0AB6FF);">
 						<tr>
 							<th scope="col" style="width: 5%">#</th>
 							<th scope="col" style="width: 20%">Tanggal</th>
