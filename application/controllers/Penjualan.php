@@ -195,7 +195,7 @@ class Penjualan extends MY_Controller
 			$pelanggan = $this->m_pelanggan->get_baris($id_pelanggan)->row()->nama;
 		}
 
-		$this->load->library('cfpdf');		
+		$this->load->library('Cfpdf');		
 		$pdf = new FPDF('P','mm','A5');
 		$pdf->AddPage();
 		$pdf->SetFont('Arial','',10);
