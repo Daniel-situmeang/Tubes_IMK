@@ -101,64 +101,89 @@ $('#toggle').click(function() {
     text-align: center;
     display: block;
 }
+</style>
+<style>
+	body{
+	background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(<?php echo config_item('assets'); ?>bg/bg2.jpg); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+.login-panel{
+	background: linear-gradient(rgba(79, 185, 183, 0.5),rgba(79, 185, 183, 0.5)); 
+}
 </style>	
 
 </head>
 <body>
 
 
-
 	<div class="karusel">
 		<div class="container-fluid">
+			<br><br><br><br><br><br>
 			<div class="login-panel">
 				<center>
+					<br>
 					<img src="<?php echo config_item('img'); ?>logo.png" />
 				</center>
 				<div class='panel panel-default'>
 					<div class='panel-body'>
+						<br>
 						<?php echo form_open('secure', array('id' => 'FormLogin')); ?>
-							<div class="form-group">
-								<label>Username</label>
+							<div class="form-group ml-4 mr-4">
 								<div class="input-group">
-									<div class="input-group-addon">
-										<span class='glyphicon glyphicon-user'></span>
+									<div class="input-group-prepend " id="inputGroup-sizing-default">
+										<span class='input-group-text font-weight-bolder'>Username</span>
 									</div>
 									<?php 
 									echo form_input(array(
 										'name' => 'username', 
 										'class' => 'form-control', 
 										'autocomplete' => 'off', 
-										'autofocus' => 'autofocus'
+										'autofocus' => 'autofocus',
+										'aria-label'=>'Sizing example input',
+										'aria-describedby'=>'inputGroup-sizing-default'
 									)); 
 									?>
 								</div>
 							</div>
-							<div class="form-group">
-								<label>Password</label>
+							<div class="form-group ml-4 mr-4">
 								<div class="input-group">
-									<div class="input-group-addon">
-										<span class='glyphicon glyphicon-lock'></span>
+									<div class="input-group-prepend " id="inputGroup-sizing-pass">
+									<span class='input-group-text font-weight-bolder'>Password</span>
 									</div>
 									<?php 
 									echo form_password(array(
 										'name' => 'password', 
 										'class' => 'form-control', 
-										'id' => 'InputPassword'
+										'id' => 'InputPassword',
+										'aria-label'=>'Sizing example input',
+										'aria-describedby'=>'inputGroup-sizing-pass'
 									)); 
 									?>
 								</div>
 							</div>
 
-							<button type="submit" class="btn btn-warning">
+							<div class="form-group ml-4 mr-4">
+								<br>
+							<button type="submit" class="btn btn-success btn-md btn-block" >
 								<span class='glyphicon glyphicon-log-in' aria-hidden="true"></span> Sign In
 							</button>
-							<button type="reset" class="btn btn-default" id='ResetData'>Reset</button>
+							<br>
+							<button type="reset" class="btn btn-dark btn-md btn-block" id='ResetData'>Reset</button>
+							<br><br>
+							</div>
 						<?php echo form_close(); ?>
 
 						<div id='ResponseInput'></div>
 					</div>
 				</div>
+<<<<<<< HEAD
 				
+=======
+>>>>>>> 1ad8e2f991ee0c804ffabad18349547fc8ae6242
 			</div>
 		</div>
 		     

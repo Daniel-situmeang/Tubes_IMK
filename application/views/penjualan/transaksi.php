@@ -226,13 +226,14 @@ if($level !== 'admin')
                 </div>
                 <div class="card-body text-center">
                     <div class="col-md-12">
-                        <div class="well col-sm-12" style="position: relative;display: inline-block;">
-                            <canvas alt="Responsive image" id="webcodecam-canvas"></canvas>
+						<div class="well col-sm-12" style="position: relative;display: inline-block;">
+						<br>
+                            <canvas id="webcodecam-canvas" style="width:100%;"></canvas>
                             <div class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
                             <div class="scanner-laser laser-rightTop" style="opacity: 0.5;"></div>
                             <div class="scanner-laser laser-leftBottom" style="opacity: 0.5;"></div>
                             <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
-                        </div>
+						</div>
                         <div class="well" style="width: 100%;">
                             <label id="zoom-value" width="100">Zoom: 2</label>
                             <input id="zoom" onchange="Page.changeZoom();" type="range" min="10" max="30" value="20">
@@ -281,6 +282,7 @@ if($level !== 'admin')
 						<i class='fa fa-shopping-cart fa-fw'></i> Penjualan <i class='fa fa-angle-right fa-fw'></i> Transaksi
 						<a href="<?php echo site_url('penjualan/transaksi'); ?>" class='pull-right'><i class='fa fa-refresh fa-fw'></i> Refresh Halaman</a>
 					</h3>
+					<div class="table-responsive-sm">
 					<table class='table table-striped table-bordered ' id='TabelTransaksi'>
 						<thead class="thead-dark">
 							<tr>
@@ -295,6 +297,7 @@ if($level !== 'admin')
 						</thead>
 						<tbody></tbody>
 					</table>
+					</div>
 
 					<div class='alert alert-info TotalBayar'>
 						<button id='BarisBaru' class='btn btn-primary pull-left'><i class='fa fa-plus fa-fw'></i> Baris Baru (F7)</button>
@@ -331,7 +334,7 @@ if($level !== 'admin')
 								</div>
 								<div class='row'>
 									<div class='col-sm-6' >
-										<button type='button' class='btn btn-primary btn-block' id='CetakStruk'>
+										<button type='button' class='btn btn-primary btn-block mb-1' id='CetakStruk'>
 											<i class='fa fa-print'></i> Cetak (F9)
 										</button>
 									</div>

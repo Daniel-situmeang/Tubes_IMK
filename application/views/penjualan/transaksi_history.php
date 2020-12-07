@@ -6,9 +6,9 @@ $level = $this->session->userdata('ap_level');
 ?>
 
 <div class="container bg-light">
-	<br>
 	<div class="panel panel-default">
 		<div class="panel-body">
+		<br>
 			<h3><i class='fa fa-shopping-cart fa-fw'></i> Penjualan <i class='fa fa-angle-right fa-fw'></i> History Penjualan</h3>
 			<hr />
 
@@ -33,9 +33,10 @@ $level = $this->session->userdata('ap_level');
 					</thead>
 				</table>
 			</div>
+			<br>
 		</div>
 	</div>
-	<br>
+
 </div>
 
 
