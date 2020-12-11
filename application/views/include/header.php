@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Kasir Penjualan</title>
-		<link href='<?php echo config_item('assets'); ?>bg/logo.png' type='image/x-icon' rel='shortcut icon'>
+		<link href='<?php echo config_item('assets'); ?>bg/log.png' type='image/x-icon' rel='shortcut icon'>
 		<!-- <link href="<?php echo config_item('bootstrap'); ?>css/bootstrap.min.css" rel="stylesheet"> -->
 		<link href="<?php echo config_item('boot4'); ?>dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="<?php echo config_item('bootstrap'); ?>css/bootstrap-theme.min.css" rel="stylesheet">

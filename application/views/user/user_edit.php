@@ -18,7 +18,7 @@ if($user->label == 'admin')
 { 
 	echo form_hidden('password', '');
 	echo form_hidden('id_akses', $user->id_akses);
-	echo form_hidden('status', $user->status);
+	echo form_hidden('status', $user->status_user);
 } 
 ?>
 

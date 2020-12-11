@@ -72,10 +72,10 @@ if($level !== 'admin')
 						</div>
 					</div>
 					<div class="card" id='PelangganArea'>
-						<div class="card-header" style="background-image: linear-gradient(270deg, #2839AA, #0AB6FF);"><font color="white"><i class='fa fa-user'></i> Informasi Pelanggan</font></div>
+						<div class="card-header" style="background-image: linear-gradient(270deg, #2839AA, #0AB6FF);"><font color="white"><i class='fa fa-user'></i> <b>Informasi Pelanggan</b></font></div>
 						<div class="card-body">
 							<div class="form-group">
-								<label>Pelanggan</label>
+								<label><b>Pelanggan</b></label>
 								<a href="<?php echo site_url('penjualan/tambah-pelanggan'); ?>" class='pull-right' id='TambahPelanggan'>Tambah Baru ?</a>
 								<select name='id_pelanggan' id='id_pelanggan' class='form-control input-sm' style='cursor: pointer;'>
 									<option value=''>-- Umum --</option>
@@ -93,25 +93,25 @@ if($level !== 'admin')
 
 							<div class="form-horizontal">
 								<div class="form-group">
-									<label class="col-sm-4 control-label">Telp / HP</label>
+									<label class="col-sm-4 control-label"><b>Telp / HP</b></label>
 									<div class="col-sm-8">
 										<div id='telp_pelanggan'><small><i>Tidak ada</i></small></div>
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-4 control-label">Alamat</label>
+									<label class="col-sm-4 control-label"><b>Alamat</b></label>
 									<div class="col-sm-8">
 										<div id='alamat_pelanggan'><small><i>Tidak ada</i></small></div>
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-4 control-label">Info Lain</label>
+									<label class="col-sm-4 control-label"><b>Info Lain</b></label>
 									<div class="col-sm-8">
 										<div id='info_tambahan_pelanggan'><small><i>Tidak ada</i></small></div>
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-4 control-label">Status</label>
+									<label class="col-sm-4 control-label"><b>Status</b></label>
 									<div class="col-sm-8">
 										<div id='status_pelanggan'><small><i>Tidak ada</i></small></div>
 									</div>
@@ -122,7 +122,7 @@ if($level !== 'admin')
 					</div>
 				</div>
 				<div class='col-sm-9'>
-					<br>
+				
 					<script src="<?php echo base_url(); ?>js/BarcodeReader.js"></script>
   <script>
     var result = document.getElementById("Result");
@@ -207,7 +207,7 @@ if($level !== 'admin')
             <div class="card mb-5">
                 <div class="card-header bg-dark">
                     <div class="navbar-form navbar-left">
-                        <h4><font color="#0AB6FF"> <img height="40px" src="<?php echo config_item('assets'); ?>bg/logo.png" /></font><font color="white"> Qrcode Scanner </font></h4>
+                        <h4><font color="#0AB6FF"> <img height="40px" src="<?php echo config_item('assets'); ?>bg/log.png" /></font><font color="white"> Qrcode Scanner </font></h4>
 						<br>
                     </div>
                     <div class="navbar-form navbar-right">
@@ -312,22 +312,22 @@ if($level !== 'admin')
 							<br />
 							<p><i class='fa fa-keyboard-o fa-fw'></i> <b>Shortcut Keyboard : </b></p>
 							<div class='row'>
-								<div class='col-sm-6'>F7 = Tambah baris baru</div>
-								<div class='col-sm-6'>F9 = Cetak Struk</div>
-								<div class='col-sm-6'>F8 = Fokus ke field bayar</div>
-								<div class='col-sm-6'>F10 = Simpan Transaksi</div>
+								<div class='col-sm-6'><b>F7 = Tambah baris baru</b></div>
+								<div class='col-sm-6'><b>F9 = Cetak Struk</b></div>
+								<div class='col-sm-6'><b>F8 = Fokus ke field bayar</b></div>
+								<div class='col-sm-6'><b>F10 = Simpan Transaksi</b></div>
 							</div> 
 						</div>
 						<div class='col-sm-6'>
 							<div class="form-horizontal">
 								<div class="form-group">
-									<label class="col-sm-6 control-label">Bayar (F8)</label>
+									<label class="col-sm-6 control-label"><b>Bayar (F8)</b></label>
 									<div class="col-sm-6">
 										<input type='text' name='cash' id='UangCash' class='form-control' onkeypress='return check_int(event)'>
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-6 control-label">Kembali</label>
+									<label class="col-sm-6 control-label"><b>Kembali</b></label>
 									<div class="col-sm-6">
 										<input type='text' id='UangKembali' class='form-control' disabled>
 									</div>

@@ -10,7 +10,7 @@ $level = $this->session->userdata('ap_level');
 <nav class="navbar navbar-expand-lg navbar-dark" style="  background-image: linear-gradient(270deg, #2839AA, #0AB6FF);">
 	
 			<a class="navbar-brand" href="<?php echo site_url(); ?>">
-			<img height="40px" src="<?php echo config_item('assets'); ?>bg/logo.png" />
+			<img height="40px" src="<?php echo config_item('assets'); ?>bg/log.png" />
 			</a>
 			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 				<span class="navbar-toggler-icon"></span>
@@ -84,16 +84,16 @@ $(document).on('click', '#GantiPass', function(e){
 	$('#ModalGue').modal('show');
 });
 </script>
-<!-- <style>
+<style>
 	body{
-	background:url(<?php echo config_item('assets'); ?>bg/ay.png); 
+	background:url(<?php echo config_item('assets'); ?>bg/laman.png); 
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 
 }
-</style> -->
+</style>
 <body>
 	
 
