@@ -94,11 +94,11 @@
 			<div class="col-5 bg-gambar">
 			<img src="<?php echo config_item('assets'); ?>bg/landing.png" alt="Responsive image" class="">
 			</div>
-			<div class="col-12 col-lg-7 bg-light ">
+			<div class="col-12 col-sm-7 bg-light ">
 			<div class="">
 				<center>
 					<br>
-					<img height="85px" src="<?php echo config_item('assets'); ?>bg/logo.png" />
+					<img height="85px" src="<?php echo config_item('assets'); ?>bg/log.png" />
 				</center>
 				<div class='panel panel-default'>
 					<div class='panel-body'>
