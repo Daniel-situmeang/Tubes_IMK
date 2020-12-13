@@ -104,15 +104,14 @@ class Barang extends MY_Controller
 				$inserted = 0;
 				foreach($_POST['nama'] as $k)
 				{
-					$nama 				= $_POST['nama'][$no_array];
+					$nama 				= $_POST['nama'][$no_array];s
 					$id_kategori_barang	= $_POST['id_kategori_barang'][$no_array];
 					$id_ukuran 			= $_POST['id_ukuran'][$no_array];
 					$stok 				= $_POST['stok'][$no_array];
 					$modal				= $_POST['modal'][$no_array];
 					$harga 				= $_POST['harga'][$no_array];
-					$qr 				= $_POST['data'][$no_array];
 
-					$insert = $this->m_barang->tambah_baru($nama, $id_kategori_barang, $id_ukuran, $stok, $modal, $harga,$qr);
+					$insert = $this->m_barang->tambah_baru($nama, $id_kategori_barang, $id_ukuran, $stok, $modal, $harga);
 					if($insert){
 						$inserted++;
 					}
@@ -146,6 +145,7 @@ class Barang extends MY_Controller
 			exit();
 		}
 	}
+
 
 	public function qrcode(){
 		
