@@ -69,25 +69,16 @@ class M_barang extends CI_Model
   		return $result;
 	}
 
-	function tambah_baru($nama, $id_kategori_barang, $id_ukuran, $stok, $modal, $harga,$qr)
+	
+	function tambah_baru($nama, $id_kategori_barang, $id_ukuran, $stok, $modal, $harga)
 	{
-		$data = [
-		"nama_barang" => $nama,
-		"total_stok" => $stok,
-		"id_ukuran" => $id_ukuran,
-		"modal" => $modal,
-		"harga" => $harga,
-		"id_kategori_barang" => $id_kategori_barang,
-		"qrcode" => $qr ];
-
 		$sql = "
-			CALL p_tambah_pj_barang('$nama', '$stok', '$harga', '$id_kategori_barang', '$id_ukuran', '$modal','$qr');
+			CALL p_tambah_pj_barang('$nama', '$stok', '$harga', '$id_kategori_barang', '$id_ukuran', '$modal');
 		";
 
-		// $result = $this->db->query($sql);
-		// mysqli_next_result( $this->db->conn_id );
-  // 		return $result;
-		$this->db->insert('pj_barang',$data);
+		$result = $this->db->query($sql);
+		mysqli_next_result( $this->db->conn_id );
+  		return $result;
 	}
 
 	function cek_kode($kode)

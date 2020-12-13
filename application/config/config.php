@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $config['database_host']	= 'localhost';
 $config['database_user']	= 'root';
 $config['database_pass'] 	= '';
-$config['database_name']	= 'penjualan_db';
+$config['database_name']	= '9transaction';
 
 //Setingan Base URL
 $config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
