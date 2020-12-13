@@ -382,7 +382,7 @@ class Barang extends MY_Controller
 						if($this->form_validation->run() == TRUE)
 						{
 							$kategori 	= $this->input->post('kategori');
-							$id_rasa	= $this->input->post('id_rasa'); 
+							$id_rasa	= $this->input->post('id_akses'); 
 							$insert 	= $this->m_kategori_barang->update_kategori($id_kategori_barang, $kategori, $id_rasa);
 							if($insert)
 							{
