@@ -104,7 +104,7 @@ class Barang extends MY_Controller
 				$inserted = 0;
 				foreach($_POST['nama'] as $k)
 				{
-					$nama 				= $_POST['nama'][$no_array];s
+					$nama 				= $_POST['nama'][$no_array];
 					$id_kategori_barang	= $_POST['id_kategori_barang'][$no_array];
 					$id_ukuran 			= $_POST['id_ukuran'][$no_array];
 					$stok 				= $_POST['stok'][$no_array];
