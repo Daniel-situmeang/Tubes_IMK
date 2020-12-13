@@ -1,5 +1,42 @@
 <?php $this->load->view('include/header'); ?>
 <style>
+$('#toggle').click(function() {
+  $('.slide-in').toggleClass('show');
+});
+.slide-in {
+  z-index: 10; /* to position it in front of the other content */
+  position: absolute;
+  overflow: hidden; /* to prevent scrollbar appearing */
+}
+
+.slide-in.from-left {
+  left: 0;
+}
+
+.slide-in.from-right {
+  right: 0;
+}
+
+.slide-in-content {
+  padding: 5px 20px;
+  background: #eee;
+  transition: transform .5s ease; /* our nice transition */
+}
+
+.slide-in.from-left .slide-in-content {
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+}
+
+.slide-in.from-right .slide-in-content {
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+}
+
+.slide-in.show .slide-in-content {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+}	
 .slide-wrapper {
     position: relative
 }
@@ -152,6 +189,7 @@
 						<div id='ResponseInput'></div>
 					</div>
 				</div>
+				
 			</div>
 			</div>
 			</div>
