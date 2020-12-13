@@ -189,10 +189,7 @@ $('#toggle').click(function() {
 						<div id='ResponseInput'></div>
 					</div>
 				</div>
-<<<<<<< HEAD
 				
-=======
->>>>>>> 1ad8e2f991ee0c804ffabad18349547fc8ae6242
 			</div>
 			</div>
 			</div>
