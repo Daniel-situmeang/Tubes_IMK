@@ -64,15 +64,11 @@ class Barang extends MY_Controller
 				$hapus = $this->m_barang->hapus_barang($id_barang);
 				if($hapus)
 				{
-					echo json_encode(array(
-						"pesan" => "<font color='green'><i class='fa fa-check'></i> Data berhasil dihapus !</font>
-					"));
+					$this->session->set_flashdata('flash','menghapus data');
 				}
 				else
 				{
-					echo json_encode(array(
-						"pesan" => "<font color='red'><i class='fa fa-warning'></i> Terjadi kesalahan, coba lagi !</font>
-					"));
+					$this->session->set_flashdata('gagal','menghapus data');
 				}
 			}
 		}

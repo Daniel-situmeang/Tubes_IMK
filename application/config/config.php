@@ -46,6 +46,7 @@ $config['bootstrap']		= $config['plugin'].'bootstrap-3.3.6/';
 $config['font_awesome']		= $config['plugin'].'font-awesome/';
 $config['boot4']			= $config['node_modules'].'bootstrap/';
 $config['jq']				= $config['node_modules'].'jquery/';
+$config['sweet']			= $config['assets'].'sweetalert/';
 
 //Setingan Judul & Footer Web
 $config['web_title']		= "Aplikasi Penjualan";

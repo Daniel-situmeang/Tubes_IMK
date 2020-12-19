@@ -4,6 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Secure extends MY_Controller 
 {
+	public function __construct(){
+
+		parent::__construct();
+		$this->load->library('form_validation');
+	   // $this->load->database();
+
+	}
+
 	public function index()
 	{
 		if($this->input->is_ajax_request())
@@ -46,11 +54,12 @@ class Secure extends MY_Controller
 
 					$json['status']		= 1;
 					$json['url_home'] 	= $URL_home;
+					$this->session->set_flashdata('flash','login');
 					echo json_encode($json);
 				}
 				else
 				{
-					$this->query_error("Login Gagal, Cek Kombinasi Username & Password !");
+					$this->session->set_flashdata('gagal','login');
 				}
 			}
 			else

@@ -5,6 +5,7 @@
 	<script src="<?php echo config_item('js'); ?>scroll.js"></script>
 	<script src="<?php echo config_item('js'); ?>height.js"></script>
 	<script src="<?php echo config_item('js'); ?>fullscreen.js"></script>
+
 	<!-- <script src="<?php echo config_item('js'); ?>pace.min.js" type="text/javascript"></script> -->
 	
 		<div class="modal fade" id="ModalGue" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -29,5 +30,7 @@
 		   }, 500);
 		});
 		</script>
+	<script src="<?= config_item('sweet');?>package/dist/sweetalert2.all.min.js"></script>
+	<script src="<?php echo config_item('js'); ?>skripku.js"></script>
 	</body>
 </html>

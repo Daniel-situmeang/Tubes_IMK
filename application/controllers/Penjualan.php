@@ -536,7 +536,7 @@ class Penjualan extends MY_Controller
 				}
 				else
 				{
-					$this->query_error();
+					$this->session->set_flashdata('gagal','menambah data');
 				}
 			}
 			else
