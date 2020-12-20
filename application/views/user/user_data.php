@@ -87,7 +87,7 @@ $tambahan .= nbs(2)."<span id='Notifikasi' style='display: none;'></span>";
 		$('.modal-dialog').addClass('modal-sm');
 		$('#ModalHeader').html('Konfirmasi');
 		$('#ModalContent').html('Apakah anda yakin ingin menghapus <br /><b>'+$(this).parent().parent().find('td:nth-child(3)').html()+'</b> ?');
-		$('#ModalFooter').html("<button type='button' class='btn btn-primary' id='YesDelete' data-url='"+Link+"'>Ya, saya yakin</button><button type='button' class='btn btn-default' data-dismiss='modal'>Batal</button>");
+		$('#ModalFooter').html("<button type='button' class='btn btn-primary' id='YesDelete' data-url='"+Link+"' onClick='window.location.reload();'>Ya, saya yakin</button><button type='button' class='btn btn-default' data-dismiss='modal'>Batal</button>");
 		$('#ModalGue').modal('show');
 	});
 

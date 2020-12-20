@@ -63,7 +63,7 @@ function TambahUser()
 }
 
 $(document).ready(function(){
-	var Tombol = "<button type='button' class='btn btn-primary' id='SimpanTambahUser'>Simpan Data</button>";
+	var Tombol = "<button type='button' class='btn btn-primary' id='SimpanTambahUser' onClick='window.location.reload();'>Simpan Data</button>";
 	Tombol += "<button type='button' class='btn btn-default' data-dismiss='modal'>Tutup</button>";
 	$('#ModalFooter').html(Tombol);
 

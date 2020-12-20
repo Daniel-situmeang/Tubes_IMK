@@ -17,7 +17,7 @@
 
 <script>
 $(document).ready(function(){
-	var Tombol = "<button type='button' class='btn btn-primary' id='SimpanUbahPass'>Ubah Password</button>";
+	var Tombol = "<button type='button' class='btn btn-primary' id='SimpanUbahPass' onClick='window.location.reload();'>Ubah Password</button>";
 	Tombol += "<button type='button' class='btn btn-default' data-dismiss='modal'>Tutup</button>";
 	$('#ModalFooter').html(Tombol);
 

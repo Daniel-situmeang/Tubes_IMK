@@ -786,7 +786,7 @@ $(document).on('click', '#Simpann', function(){
 	$('.modal-dialog').addClass('modal-sm');
 	$('#ModalHeader').html('Konfirmasi');
 	$('#ModalContent').html("Apakah anda yakin ingin menyimpan transaksi ini ?");
-	$('#ModalFooter').html("<button type='button' class='btn btn-primary' id='SimpanTransaksi'>Ya, saya yakin</button><button type='button' class='btn btn-default' data-dismiss='modal'>Batal</button>");
+	$('#ModalFooter').html("<button type='button' class='btn btn-primary' id='SimpanTransaksi' onClick='window.location.reload();'>Ya, saya yakin</button><button type='button' class='btn btn-default' data-dismiss='modal'>Batal</button>");
 	$('#ModalGue').modal('show');
 
 	setTimeout(function(){ 

@@ -77,15 +77,11 @@ class User extends MY_Controller
 				$hapus = $this->m_user->hapus_user($id_user);
 				if($hapus)
 				{
-					echo json_encode(array(
-						"pesan" => "<font color='green'><i class='fa fa-check'></i> Data berhasil dihapus !</font>
-					"));
+					$this->session->set_flashdata('flash','menghapus data karyawan');
 				}
 				else
 				{
-					echo json_encode(array(
-						"pesan" => "<font color='red'><i class='fa fa-warning'></i> Terjadi kesalahan, coba lagi !</font>
-					"));
+					$this->session->set_flashdata('gagal','menghapus data karyawan');
 				}
 			}
 		}
@@ -115,14 +111,11 @@ class User extends MY_Controller
 
 				if($insert > 0)
 				{
-					echo json_encode(array(
-						'status' => 1,
-						'pesan' => "<i class='fa fa-check' style='color:green;'></i> Data User berhasil dismpan."
-					));
+					$this->session->set_flashdata('flash','menambah data karyawan');
 				}
 				else
 				{
-					$this->query_error("Oops, terjadi kesalahan, coba lagi !");
+					$this->session->set_flashdata('gagal','menambah data karyawan');
 				}
 			}
 			else
@@ -187,14 +180,11 @@ class User extends MY_Controller
 								$this->session->set_userdata('ap_nama', $nama);
 							}
 
-							echo json_encode(array(
-								'status' => 1,
-								'pesan' => "<div class='alert alert-success'><i class='fa fa-check'></i> Data user berhasil diupdate.</div>"
-							));
+							$this->session->set_flashdata('flash','mengedit data karyawan');
 						}
 						else
 						{
-							$this->query_error();
+							$this->session->set_flashdata('gagal','menambah data karyawan');
 						}
 					}
 					else
@@ -232,19 +222,16 @@ class User extends MY_Controller
 					{
 						$this->session->set_userdata('ap_password', sha1($pass_new));
 
-						echo json_encode(array(
-							'status' => 1,
-							'pesan' => "<div class='alert alert-success'><i class='fa fa-check'></i> Password berhasil diupdate.</div>"
-						));
+						$this->session->set_flashdata('flash','mengubah password data karyawan');
 					}
 					else
 					{
-						$this->query_error();
+						$this->session->set_flashdata('gagal','mengedit data karyawan');
 					}
 				}
 				else
 				{
-					$this->input_error();
+					$this->session->set_flashdata('gagal','mengedit data karyawan');
 				}
 			}
 			else

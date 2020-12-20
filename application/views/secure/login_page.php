@@ -204,7 +204,6 @@ $('#toggle').click(function() {
 
 
 
-
 <script>
 $(function(){
 	//------------------------Proses Login Ajax-------------------------//
@@ -235,6 +234,7 @@ $(function(){
 	});
 });
 </script>
+
 
 <?php $this->load->view('include/footer'); ?>
 

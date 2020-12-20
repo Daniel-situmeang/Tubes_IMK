@@ -76,7 +76,7 @@ if($user->label == 'admin')
 
 <script>
 $(document).ready(function(){
-	var Tombol = "<button type='button' class='btn btn-primary' id='SimpanEditUser'>Update Data</button>";
+	var Tombol = "<button type='button' class='btn btn-primary' id='SimpanEditUser' onClick='window.location.reload();'>Update Data</button>";
 	Tombol += "<button type='button' class='btn btn-default' data-dismiss='modal'>Tutup</button>";
 	$('#ModalFooter').html(Tombol);
 

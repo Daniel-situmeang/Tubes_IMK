@@ -74,7 +74,7 @@ class Penjualan extends MY_Controller
 
 							if($bayar < $grand_total)
 							{
-								$this->query_error("Cash Kurang");
+								$this->session->set_flashdata('gagal','transaksi karena cash kurang');
 							}
 							else
 							{
@@ -122,17 +122,17 @@ class Penjualan extends MY_Controller
 
 									if($inserted > 0)
 									{
-										$alert = $this->session->set_flashdata('flash','menyimpan transaksi');
-										echo json_encode(array('status' => 1, 'pesan' => $alert));
+										$this->session->set_flashdata('flash','menyimpan transaksi');
+										
 									}
 									else
 									{
-										$this->query_error();
+										$this->session->set_flashdata('gagal','menyimpan transaksi');
 									}
 								}
 								else
 								{
-									$this->query_error();
+									$this->session->set_flashdata('gagal','menyimpan transaksi');
 								}
 							}
 						}
@@ -143,12 +143,12 @@ class Penjualan extends MY_Controller
 					}
 					else
 					{
-						$this->query_error("Harap masukan minimal 1 kode barang !");
+						$this->session->set_flashdata('gagal','transaksi,harap masukan minimal 1 kode barang !');
 					}
 				}
 				else
 				{
-					$this->query_error("Harap masukan minimal 1 kode barang !");
+					$this->session->set_flashdata('gagal','transaksi,harap masukan minimal 1 kode barang !');
 				}
 			}
 			else

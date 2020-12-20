@@ -1,6 +1,6 @@
 const flashData = $('.flash-data').data('flashdata');
 const gagalData = $('.gagal-data').data('gagal');
-const warningData = $('.warning-data').data('warning');
+const hatiData = $('.hati-data').data('hati');
 
 if(flashData) {
 	Swal.fire({
@@ -18,10 +18,11 @@ else if(gagalData) {
 	});
 }
 
-else if(warningData) {
+
+else if(gagalData) {
 	Swal.fire({
 	title: 'Maaf ',
-	text: 'Harap isi ' + warningData,
-	icon: 'error'
+	text: 'Terjadi error saat ' + hatiData,
+	icon: 'warning'
 	});
 }

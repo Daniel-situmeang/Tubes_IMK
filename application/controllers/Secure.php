@@ -14,12 +14,10 @@ class Secure extends MY_Controller
 
 	public function index()
 	{
+		$this->form_validation->set_rules('username','Username','trim|required|min_length[3]|max_length[40]');
+			$this->form_validation->set_rules('password','Password','trim|required|min_length[3]|max_length[40]');
 		if($this->input->is_ajax_request())
 		{
-			$this->load->library('form_validation');
-			$this->form_validation->set_rules('username','Username','trim|required|min_length[3]|max_length[40]');
-			$this->form_validation->set_rules('password','Password','trim|required|min_length[3]|max_length[40]');
-			$this->form_validation->set_message('required','%s harus diisi !');
 			
 			if($this->form_validation->run() == TRUE)
 			{
@@ -64,7 +62,8 @@ class Secure extends MY_Controller
 			}
 			else
 			{
-				$this->input_error();
+				$this->session->set_flashdata('gagal','login karena username atau password masih kosong');
+			
 			}
 		}
 		else
