@@ -5,11 +5,11 @@
 </div>
 <div class='form-group'>
 	<label>Varian</label>
-	<select name='id_rasa' class='form-control'>
+	<select name='id_varian' class='form-control'>
 	<?php
-	foreach($rasa->result() as $a)
+	foreach($varian->result() as $a)
 	{
-		echo "<option value='".$a->id_rasa."'>".$a->nama_rasa."</option>";
+		echo "<option value='".$a->id_varian."'>".$a->nama_varian."</option>";
 	}
 	?>
 	</select>

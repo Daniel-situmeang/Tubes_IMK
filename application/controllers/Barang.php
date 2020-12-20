@@ -273,7 +273,7 @@ class Barang extends MY_Controller
 
 			$nestedData[]	= $row['nomor'];
 			$nestedData[]	= $row['kategori'];
-			$nestedData[]	= $row['nama_rasa'];
+			$nestedData[]	= $row['nama_varian'];
 
 
 			if($level == 'admin' OR $level == 'inventory')
@@ -311,8 +311,8 @@ class Barang extends MY_Controller
 				{
 					$this->load->model('m_kategori_barang');
 					$kategori 	= $this->input->post('kategori');
-					$id_rasa 	= $this->input->post('id_rasa');
-					$insert 	= $this->m_kategori_barang->tambah_kategori($kategori, $id_rasa);
+					$id_varian 	= $this->input->post('id_varian');
+					$insert 	= $this->m_kategori_barang->tambah_kategori($kategori, $id_varian);
 					if($insert)
 					{
 						$this->session->set_flashdata('flash','menambah kategori');
@@ -329,8 +329,8 @@ class Barang extends MY_Controller
 			}
 			else
 			{
-				$this->load->model('m_rasa');
-				$dt['rasa'] 	= $this->m_rasa->get_all();
+				$this->load->model('m_varian');
+				$dt['varian'] 	= $this->m_varian->get_all();
 				$this->load->view('barang/kategori/kategori_tambah', $dt);
 			}
 		}
@@ -378,8 +378,8 @@ class Barang extends MY_Controller
 						if($this->form_validation->run() == TRUE)
 						{
 							$kategori 	= $this->input->post('kategori');
-							$id_rasa	= $this->input->post('id_akses'); 
-							$insert 	= $this->m_kategori_barang->update_kategori($id_kategori_barang, $kategori, $id_rasa);
+							$id_varian	= $this->input->post('id_akses'); 
+							$insert 	= $this->m_kategori_barang->update_kategori($id_kategori_barang, $kategori, $id_varian);
 							if($insert)
 							{
 								$this->session->set_flashdata('flash','mengedit kategori');
@@ -396,8 +396,8 @@ class Barang extends MY_Controller
 					}
 					else
 					{
-						$this->load->model('m_rasa');
-						$dt['rasa'] 	= $this->m_rasa->get_all();
+						$this->load->model('m_varian');
+						$dt['varian'] 	= $this->m_varian->get_all();
 						$dt['kategori'] = $this->m_kategori_barang->get_baris($id_kategori_barang)->row();
 						$this->load->view('barang/kategori/kategori_edit', $dt);
 					}
