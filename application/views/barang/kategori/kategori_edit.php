@@ -12,13 +12,13 @@
 	<label>Varian</label>
 	<select name='id_akses' class='form-control'>
 	<?php
-	foreach($rasa->result() as $a)
+	foreach($varian->result() as $a)
 	{
 		$selected = '';
-		if($a->id_rasa == $kategori->id_rasa){
+		if($a->id_varian == $kategori->id_varian){
 			$selected = 'selected';
 		}
-		echo "<option value='".$a->id_rasa."'".$selected.">".$a->nama_rasa."</option>";
+		echo "<option value='".$a->id_varian."'".$selected.">".$a->nama_varian."</option>";
 	}
 	?>
 	</select>
