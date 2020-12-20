@@ -54,7 +54,7 @@ $level = $this->session->userdata('ap_level');
 				<?php } ?>
 
 				<?php if($level == 'admin') { ?>
-				<li <?php if($controller == 'user') { echo "class='nav-item bg-menu active'"; } ?>><a  class="nav-link" href="<?php echo site_url('user'); ?>"><i class='fa fa-users fa-fw'></i> List User</a></li>
+				<li <?php if($controller == 'user') { echo "class='nav-item bg-menu active'"; } ?>><a  class="nav-link" href="<?php echo site_url('user'); ?>"><i class='fa fa-users fa-fw'></i> Karyawan</a></li>
 				<?php } ?>
 			</ul>
 
