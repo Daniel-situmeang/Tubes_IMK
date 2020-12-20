@@ -522,21 +522,10 @@ class Penjualan extends MY_Controller
 				$telepon 	= $this->input->post('telepon');
 				$info 		= $this->clean_tag_input($this->input->post('info'));
 
-				// $unique		= time().$this->session->userdata('ap_id_user');
 				$insert 	= $this->m_pelanggan->tambah_pelanggan($nama, $alamat, $telepon, $info);
 				if($insert)
 				{
-					// $id_pelanggan = $this->m_pelanggan->get_dari_kode($unique)->row()->id_pelanggan;
 					$this->session->set_flashdata('flash','menambah data pelanggan');
-					echo json_encode(array(
-						'status' => 1,
-						'pesan' => "<meta http-equiv='refresh' content='300'><div class='gagal-data' data-flash='<?=$this->session->flashdata('flash');?>'></div>",
-						// 'id_pelanggan' => $id_pelanggan,
-						// 'nama' => $nama,
-						// 'alamat' => preg_replace("/\r\n|\r|\n/",'<br />', $alamat),
-						// 'telepon' => $telepon,
-						'info' => (empty($info)) ? "<small><i>Tidak ada</i></small>" : preg_replace("/\r\n|\r|\n/",'<br />', $info)						
-					));
 				}
 				else
 				{
@@ -573,14 +562,10 @@ class Penjualan extends MY_Controller
 						if($update)
 						{
 							$this->session->set_flashdata('flash','mengedit data pelanggan');
-							echo json_encode(array(
-								'status' => 1,
-								'pesan' => "<div class='gagal-data' data-flash='<?=$this->session->flashdata('flash');?>'></div>"
-							));
 						}
 						else
 						{
-							$this->query_error();
+							$this->session->set_flashdata('gagal','mengedit data pelanggan');
 						}
 					}
 					else
@@ -626,16 +611,10 @@ class Penjualan extends MY_Controller
 				if($hapus)
 				{
 					$this->session->set_flashdata('flash','menghapus data pelanggan');
-					echo json_encode(array(
-						"pesan" => "<div class='gagal-data' data-flash='<?=$this->session->flashdata('flash');?>'></div>
-					"));
 				}
 				else
 				{
 					$this->session->set_flashdata('gagal','menghapus data pelanggan');
-					echo json_encode(array(
-						"pesan" => "<div class='gagal-data' data-flash='<?=$this->session->flashdata('gagal');?>'></div>
-					"));
 				}
 			}
 		}
