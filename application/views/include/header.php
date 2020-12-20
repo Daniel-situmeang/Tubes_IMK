@@ -37,3 +37,4 @@
 		<div id='LoadingDulu' class="col-sm-12"></div>
 		<div class="flash-data" data-flashdata="<?=$this->session->flashdata('flash');?>"></div>
 <div class="gagal-data" data-gagal="<?=$this->session->flashdata('gagal');?>"></div>
+<div class="warning-data" data-warning="<?=$this->session->flashdata('warning');?>"></div>

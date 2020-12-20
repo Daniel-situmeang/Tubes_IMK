@@ -382,11 +382,11 @@ class Barang extends MY_Controller
 							$insert 	= $this->m_kategori_barang->update_kategori($id_kategori_barang, $kategori, $id_rasa);
 							if($insert)
 							{
-								$this->session->set_flashdata('flash','menambah kategori');
+								$this->session->set_flashdata('flash','mengedit kategori');
 							}
 							else
 							{
-								$this->session->set_flashdata('gagal','menambah kategori');
+								$this->session->set_flashdata('gagal','mengedit kategori');
 							}
 						}
 						else

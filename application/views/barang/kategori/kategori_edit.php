@@ -9,7 +9,7 @@
 	?>
 </div>
 <div class='form-group'>
-	<label>Rasa</label>
+	<label>Varian</label>
 	<select name='id_akses' class='form-control'>
 	<?php
 	foreach($rasa->result() as $a)

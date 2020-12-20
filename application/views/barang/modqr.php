@@ -70,12 +70,21 @@ $this->load->model('M_barang');
         if (trim($_REQUEST['data']) == '')
             die('data cannot be empty! <a href="?">back</a>');
             
-        // user data
+		// user data
+		
         $filename = $PNG_TEMP_DIR.'test'.md5($_REQUEST['data'].'|'.$errorCorrectionLevel.'|'.$matrixPointSize).'.png';
         $gbr = $PNG_WEB_DIR.'test'.md5($_REQUEST['data'].'|'.$errorCorrectionLevel.'|'.$matrixPointSize).'.png';
-        $id = $this->uri->segment(3);
-        QRcode::png($_REQUEST['data'], $filename, $errorCorrectionLevel, $matrixPointSize, 2);
-        $this->M_barang->tambahqrcode($id,$gbr);    
+		$id = $this->uri->segment(3);
+		QRcode::png($_REQUEST['data'], $filename, $errorCorrectionLevel, $matrixPointSize, 2);
+		$nama = $this->input->post('data');
+		$ambil= $this->M_barang->ambil_nama($id)->row();
+		if($ambil = $nama){
+		$tambah = $this->M_barang->tambahqrcode($id,$gbr);
+		$this->session->set_flashdata('flash','mengedit qrcode');
+		}
+		else{
+			$this->session->set_flashdata('warning','dengan nama barang');
+		}  
         
     } else {    
     
@@ -116,7 +125,7 @@ $this->load->model('M_barang');
     echo '</select></div>
         <div class="form-group col-md-3">
         <br>
-        <input type="submit" class="btn btn-success mt-2" value="Buat QRcode">
+        <input type="submit" class="btn btn-success mt-2" value="Buat QRcode" onClick="window.location.reload();">
         </div></center></form><hr/>';
         ?>
 </div>

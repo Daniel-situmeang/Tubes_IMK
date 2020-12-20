@@ -177,7 +177,7 @@ $('#toggle').click(function() {
 
 							<div class="form-group ml-4 mr-4">
 								<br>
-							<button type="submit" class="btn btn-success btn-md btn-block" >
+							<button type="submit" class="btn btn-success btn-md btn-block" onClick="window.location.reload();">
 								<span class='glyphicon glyphicon-log-in' aria-hidden="true"></span> Sign In
 							</button>
 							<br>
@@ -185,16 +185,14 @@ $('#toggle').click(function() {
 							<br><br>
 							</div>
 						<?php echo form_close(); ?>
-						<?= validation_errors();?>
-						
-						<div class="gagal-data" data-gagal="<?=$this->session->flashdata('gagal');?>"></div>
+
+					
 					</div>
 				</div>
 				
 			</div>
 			</div>
 			</div>
-			<div id='ResponseInput' class="mt-5"></div>
 		</div>
 		     
 		     

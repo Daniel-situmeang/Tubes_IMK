@@ -4,7 +4,7 @@
 	<input type='text' name='kategori' class='form-control'>
 </div>
 <div class='form-group'>
-	<label>Rasa</label>
+	<label>Varian</label>
 	<select name='id_rasa' class='form-control'>
 	<?php
 	foreach($rasa->result() as $a)

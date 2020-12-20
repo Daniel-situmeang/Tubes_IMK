@@ -181,4 +181,12 @@ class M_barang extends CI_Model
 
 		return $this->db->query($sql);
 	}
+
+	function ambil_nama($id){
+		return $this->db
+		->select('nama_barang')
+		->where('id_barang',$id)
+		->get('pj_barang');
+
+	}
 }

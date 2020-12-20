@@ -19,7 +19,7 @@ $level = $this->session->userdata('ap_level');
 						<tr>
 							<th>#</th>
 							<th>Kategori</th>
-							<th>Rasa</th>
+							<th>Varian</th>
 							<?php if($level == 'admin' OR $level == 'inventory') { ?>
 							<th class='no-sort'>Edit</th>
 							<th class='no-sort'>Hapus</th>
