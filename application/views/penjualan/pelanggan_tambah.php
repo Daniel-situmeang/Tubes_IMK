@@ -9,7 +9,7 @@
 </div>
 <div class='form-group'>
 	<label>Nomor Telepon / Handphone</label>
-	<input type='text' name='telepon' class='form-control'>
+	<input type='number' name='telepon' class='form-control'>
 </div>
 <div class='form-group'>
 	<label>Info Tambahan Lainnya</label>
