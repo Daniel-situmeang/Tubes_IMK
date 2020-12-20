@@ -436,14 +436,16 @@ class Penjualan extends MY_Controller
 				$hapus 	= $this->m_penjualan_master->hapus_transaksi($id_penjualan, $reverse_stok);
 				if($hapus)
 				{
+					$this->session->set_flashdata('flash','menghapus data transaksi '.$nota);
 					echo json_encode(array(
-						"pesan" => "<font color='green'><i class='fa fa-check'></i> Transaksi <b>".$nota."</b> berhasil dihapus !</font>
+						"pesan" => "<div class='gagal-data' data-flash='<?=$this->session->flashdata('flash');?>'></div>
 					"));
 				}
 				else
 				{
+					$this->session->set_flashdata('gagal','menghapus data transaksi');
 					echo json_encode(array(
-						"pesan" => "<font color='red'><i class='fa fa-warning'></i> Terjadi kesalahan, coba lagi !</font>
+						"pesan" => "<div class='gagal-data' data-flash='<?=$this->session->flashdata('gagal');?>'></div>
 					"));
 				}
 			}
@@ -623,14 +625,16 @@ class Penjualan extends MY_Controller
 				$hapus = $this->m_pelanggan->hapus_pelanggan($id_pelanggan);
 				if($hapus)
 				{
+					$this->session->set_flashdata('flash','menghapus data pelanggan');
 					echo json_encode(array(
-						"pesan" => "<font color='green'><i class='fa fa-check'></i> Data berhasil dihapus !</font>
+						"pesan" => "<div class='gagal-data' data-flash='<?=$this->session->flashdata('flash');?>'></div>
 					"));
 				}
 				else
 				{
+					$this->session->set_flashdata('gagal','menghapus data pelanggan');
 					echo json_encode(array(
-						"pesan" => "<font color='red'><i class='fa fa-warning'></i> Terjadi kesalahan, coba lagi !</font>
+						"pesan" => "<div class='gagal-data' data-flash='<?=$this->session->flashdata('gagal');?>'></div>
 					"));
 				}
 			}

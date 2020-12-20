@@ -354,8 +354,9 @@ class Barang extends MY_Controller
 				$hapus = $this->m_kategori_barang->hapus_kategori($id_kategori_barang);
 				if($hapus)
 				{
+					$this->session->flashdata('flash','menghapus kategori');
 					echo json_encode(array(
-						"pesan" => "<font color='green'><i class='fa fa-check'></i> Data berhasil dihapus !</font>
+						"pesan" => "<div class='gagal-data' data-flash='<?=$this->session->flashdata('flash');?>'></div>
 					"));
 				}
 				else

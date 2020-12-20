@@ -72,8 +72,7 @@ $level = $this->session->userdata('ap_level');
 		</div>
 </nav>
 <br><br>
-<div class="flash-data" data-flashdata="<?=$this->session->flashdata('flash');?>"></div>
-<div class="gagal-data" data-gagal="<?=$this->session->flashdata('gagal');?>"></div>
+
 
 <script>
 $(document).on('click', '#GantiPass', function(e){
