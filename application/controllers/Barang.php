@@ -319,7 +319,7 @@ class Barang extends MY_Controller
 					}
 					else
 					{
-						$this->session->set_flashdata('gagal','mengedit data');
+						$this->session->set_flashdata('gagal','menambah kategori');
 					}
 				}
 				else
@@ -347,16 +347,11 @@ class Barang extends MY_Controller
 				$hapus = $this->m_kategori_barang->hapus_kategori($id_kategori_barang);
 				if($hapus)
 				{
-					$this->session->flashdata('flash','menghapus kategori');
-					echo json_encode(array(
-						"pesan" => "<div class='gagal-data' data-flash='<?=$this->session->flashdata('flash');?>'></div>
-					"));
+					$this->session->set_flashdata('flash','menghapus kategori');
 				}
 				else
 				{
-					echo json_encode(array(
-						"pesan" => "<font color='red'><i class='fa fa-warning'></i> Terjadi kesalahan, coba lagi !</font>
-					"));
+					$this->session->set_flashdata('gagal','menghapus kategori');
 				}
 			}
 		}
@@ -387,14 +382,11 @@ class Barang extends MY_Controller
 							$insert 	= $this->m_kategori_barang->update_kategori($id_kategori_barang, $kategori, $id_rasa);
 							if($insert)
 							{
-								echo json_encode(array(
-									'status' => 1,
-									'pesan' => "<div class='alert alert-success'><i class='fa fa-check'></i> Data berhasil diupdate.</div>"
-								));
+								$this->session->set_flashdata('flash','menambah kategori');
 							}
 							else
 							{
-								$this->query_error();
+								$this->session->set_flashdata('gagal','menambah kategori');
 							}
 						}
 						else

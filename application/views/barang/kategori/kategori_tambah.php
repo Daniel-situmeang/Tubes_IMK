@@ -47,7 +47,7 @@ function TambahKategori()
 }
 
 $(document).ready(function(){
-	var Tombol = "<button type='button' class='btn btn-primary' id='SimpanTambahKategori'>Simpan Data</button>";
+	var Tombol = "<button type='button' class='btn btn-primary' id='SimpanTambahKategori' onClick='window.location.reload();'>Simpan Data</button>";
 	Tombol += "<button type='button' class='btn btn-default' data-dismiss='modal'>Tutup</button>";
 	$('#ModalFooter').html(Tombol);
 

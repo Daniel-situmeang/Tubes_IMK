@@ -52,7 +52,7 @@ function EditKategori()
 }
 
 $(document).ready(function(){
-	var Tombol = "<button type='button' class='btn btn-primary' id='SimpanEditKategori'>Update Data</button>";
+	var Tombol = "<button type='button' class='btn btn-primary' id='SimpanEditKategori' onClick='window.location.reload();'>Update Data</button>";
 	Tombol += "<button type='button' class='btn btn-default' data-dismiss='modal'>Tutup</button>";
 	$('#ModalFooter').html(Tombol);
 
