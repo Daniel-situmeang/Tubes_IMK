@@ -72,7 +72,7 @@ $level = $this->session->userdata('ap_level');
 		</div>
 </nav>
 <br><br>
-
+<div id='LoadingDulu' class="col-sm-12"></div>
 
 <script>
 $(document).on('click', '#GantiPass', function(e){
