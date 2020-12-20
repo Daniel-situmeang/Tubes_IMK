@@ -62,7 +62,7 @@ $level = $this->session->userdata('ap_level');
 				<li class="nav-item dropdown">
 					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class='fa fa-user fa-fw'></i> <?php echo $this->session->userdata('ap_nama'); ?> <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item mb-2"><?php echo $this->session->userdata('ap_level_caption'); ?></a></li>
+						<li><div class="navbar-text mb-2 ml-4"><font color="black"><?php echo $this->session->userdata('ap_level_caption'); ?></font></div></li>
 						<li><a class="dropdown-item"  href="<?php echo site_url('user/ubah-password'); ?>" id='GantiPass'>Ubah Password</a></li>
 						<li role="separator" class="divider"></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('secure/logout'); ?>"><i class='fa fa-sign-out fa-fw'></i> Log Out</a></li>
