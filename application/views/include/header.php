@@ -28,6 +28,9 @@
 				$("#LoadingDulu").hide(); 
 			}
 		});
+		function AutoRefresh( t ) {
+               setTimeout("location.reload(true);", t);
+            }
 		</script>
 	</head>
 	<body>

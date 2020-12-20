@@ -228,14 +228,11 @@ class Barang extends MY_Controller
 							if($update)
 							{
 								$this->session->set_flashdata('flash','mengedit data');
-								echo json_encode(array(
-									'status' => 1,
-									'pesan' => "<div class='alert alert-success'><i class='fa fa-check'></i> Data barang berhasil diupdate.</div>"
-								));
+							
 							}
 							else
 							{
-								$this->query_error();
+								$this->session->set_flashdata('gagal','mengedit data');
 							}
 					}
 					else
@@ -319,14 +316,10 @@ class Barang extends MY_Controller
 					if($insert)
 					{
 						$this->session->set_flashdata('flash','menambah kategori');
-						echo json_encode(array(
-							'status' => 1,
-							'pesan' => "<div class='alert alert-success'><i class='fa fa-check'></i> <b>".$kategori."</b> berhasil ditambahkan.</div>"
-						));
 					}
 					else
 					{
-						$this->query_error();
+						$this->session->set_flashdata('gagal','mengedit data');
 					}
 				}
 				else

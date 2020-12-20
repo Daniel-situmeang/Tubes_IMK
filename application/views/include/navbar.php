@@ -95,7 +95,7 @@ $(document).on('click', '#GantiPass', function(e){
 
 }
 </style>
-<body>
+
 	
 
 
