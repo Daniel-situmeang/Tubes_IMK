@@ -81,7 +81,7 @@ function EditPelanggan()
 }
 
 $(document).ready(function(){
-	var Tombol = "<button type='button' class='btn btn-primary' id='SimpanEditPelanggan'>Update Data</button>";
+	var Tombol = "<button type='button' class='btn btn-primary' id='SimpanEditPelanggan' onClick='window.location.reload();'>Update Data</button>";
 	Tombol += "<button type='button' class='btn btn-default' data-dismiss='modal'>Tutup</button>";
 	$('#ModalFooter').html(Tombol);
 
