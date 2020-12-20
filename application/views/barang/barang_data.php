@@ -9,7 +9,7 @@ $level = $this->session->userdata('ap_level');
 	<br>
 	<div class="panel panel-default">
 		<div class="panel-body">
-			<h3><i class='fa fa-cube fa-fw'></i> Barang <i class='fa fa-angle-right fa-fw'></i> Semua Barang</h3>
+			<h3><i class='fa fa-truck fa-fw'></i> Barang <i class='fa fa-angle-right fa-fw'></i> Semua Barang</h3>
 			<hr />
 
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">

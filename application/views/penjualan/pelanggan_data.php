@@ -45,7 +45,7 @@ $level = $this->session->userdata('ap_level');
 $tambahan = '';
 if($level == 'admin' OR $level == 'kasir' OR $level == 'keuangan')
 {
-	$tambahan .= nbs(2)."<a href='".site_url('penjualan/tambah-pelanggan')."' class='btn btn-primary' id='TambahPelanggan'><i class='fa fa-plus fa-fw'></i> Tambah</a>";
+	$tambahan .= nbs(2)."<a href='".site_url('penjualan/tambah-pelanggan')."' class='btn btn-primary' id='TambahPelanggan'><i class='fa fa-user-plus fa-fw'></i> Tambah</a>";
 	$tambahan .= nbs(2)."<span id='Notifikasi' style='display: none;'></span>";
 }
 ?>

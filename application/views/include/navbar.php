@@ -35,7 +35,7 @@ $level = $this->session->userdata('ap_level');
 				<?php } ?>
 
 				<li class="nav-item dropdown <?php if($controller == 'barang') { echo 'bg-menu active'; } ?>">
-					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class='fa fa-cube fa-fw'></i> Barang <span class="caret"></span></a>
+					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class='fa fa-truck fa-fw'></i> Barang <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="<?php echo site_url('barang'); ?>">Semua Barang</a></li>
 						<div class="dropdown-divider"></div>

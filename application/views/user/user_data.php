@@ -34,7 +34,7 @@ $level = $this->session->userdata('ap_level');
 </div>
 
 <?php
-$tambahan = nbs(2)."<a href='".site_url('user/tambah')."' class='btn btn-primary' id='TambahUser'><i class='fa fa-plus fa-fw'></i> Tambah Karyawan</a>";
+$tambahan = nbs(2)."<a href='".site_url('user/tambah')."' class='btn btn-primary' id='TambahUser'><i class='fa fa-user-plus fa-fw'></i> Tambah Karyawan</a>";
 $tambahan .= nbs(2)."<span id='Notifikasi' style='display: none;'></span>";
 ?>
 
