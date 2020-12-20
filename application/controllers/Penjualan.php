@@ -122,7 +122,8 @@ class Penjualan extends MY_Controller
 
 									if($inserted > 0)
 									{
-										echo json_encode(array('status' => 1, 'pesan' => "Transaksi berhasil disimpan !"));
+										$alert = $this->session->set_flashdata('flash','menyimpan transaksi');
+										echo json_encode(array('status' => 1, 'pesan' => $alert));
 									}
 									else
 									{
@@ -519,18 +520,19 @@ class Penjualan extends MY_Controller
 				$telepon 	= $this->input->post('telepon');
 				$info 		= $this->clean_tag_input($this->input->post('info'));
 
-				$unique		= time().$this->session->userdata('ap_id_user');
-				$insert 	= $this->m_pelanggan->tambah_pelanggan($nama, $alamat, $telepon, $info, $unique);
+				// $unique		= time().$this->session->userdata('ap_id_user');
+				$insert 	= $this->m_pelanggan->tambah_pelanggan($nama, $alamat, $telepon, $info);
 				if($insert)
 				{
-					$id_pelanggan = $this->m_pelanggan->get_dari_kode($unique)->row()->id_pelanggan;
+					// $id_pelanggan = $this->m_pelanggan->get_dari_kode($unique)->row()->id_pelanggan;
+					$this->session->set_flashdata('flash','menambah data pelanggan');
 					echo json_encode(array(
 						'status' => 1,
-						'pesan' => "<div class='alert alert-success'><i class='fa fa-check'></i> <b>".$nama."</b> berhasil ditambahkan sebagai pelanggan.</div>",
-						'id_pelanggan' => $id_pelanggan,
-						'nama' => $nama,
-						'alamat' => preg_replace("/\r\n|\r|\n/",'<br />', $alamat),
-						'telepon' => $telepon,
+						'pesan' => "<meta http-equiv='refresh' content='300'><div class='gagal-data' data-flash='<?=$this->session->flashdata('flash');?>'></div>",
+						// 'id_pelanggan' => $id_pelanggan,
+						// 'nama' => $nama,
+						// 'alamat' => preg_replace("/\r\n|\r|\n/",'<br />', $alamat),
+						// 'telepon' => $telepon,
 						'info' => (empty($info)) ? "<small><i>Tidak ada</i></small>" : preg_replace("/\r\n|\r|\n/",'<br />', $info)						
 					));
 				}
@@ -568,9 +570,10 @@ class Penjualan extends MY_Controller
 						$update 	= $this->m_pelanggan->update_pelanggan($id_pelanggan, $nama, $alamat, $telepon, $info, $status);
 						if($update)
 						{
+							$this->session->set_flashdata('flash','mengedit data pelanggan');
 							echo json_encode(array(
 								'status' => 1,
-								'pesan' => "<div class='alert alert-success'><i class='fa fa-check'></i> Data berhasil diupdate.</div>"
+								'pesan' => "<div class='gagal-data' data-flash='<?=$this->session->flashdata('flash');?>'></div>"
 							));
 						}
 						else

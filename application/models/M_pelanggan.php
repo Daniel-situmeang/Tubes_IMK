@@ -70,7 +70,7 @@ class M_pelanggan extends CI_Model
 		return $data;
 	}
 
-	function tambah_pelanggan($nama, $alamat, $telepon, $info, $unique)
+	function tambah_pelanggan($nama, $alamat, $telepon, $info)
 	{
 		date_default_timezone_set("Asia/Jakarta");
 
@@ -79,8 +79,7 @@ class M_pelanggan extends CI_Model
 			'alamat' => $alamat,
 			'telp' => $telepon,
 			'info_tambahan' => $info,
-			'waktu_input' => date('Y-m-d H:i:s'),
-			'kode_unik' => $unique
+			'waktu_input' => date('Y-m-d H:i:s')
 		);
 
 		return $this->db->insert('pj_pelanggan', $dt);

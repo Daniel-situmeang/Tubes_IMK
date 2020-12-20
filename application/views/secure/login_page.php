@@ -186,7 +186,7 @@ $('#toggle').click(function() {
 							</div>
 						<?php echo form_close(); ?>
 						<?= validation_errors();?>
-						<div id='ResponseInput'></div>
+						
 						<div class="gagal-data" data-gagal="<?=$this->session->flashdata('gagal');?>"></div>
 					</div>
 				</div>
@@ -194,6 +194,7 @@ $('#toggle').click(function() {
 			</div>
 			</div>
 			</div>
+			<div id='ResponseInput' class="mt-5"></div>
 		</div>
 		     
 		     
@@ -201,6 +202,7 @@ $('#toggle').click(function() {
 		          
 		</div>
 
+	
 
 
 

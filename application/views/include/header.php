@@ -19,7 +19,7 @@
 		$(document).on({
 			ajaxStart: function() { 
 				habiscuy = setTimeout(function(){
-					$("#LoadingDulu").html("<div id='LoadingContent'><i class='fa fa-spinner fa-spin'></i> Mohon tunggu ....</div>");
+					$("#LoadingDulu").html("<div id='LoadingContent' class='spinner-grow text-primary' role='status' > <span class='visually-hidden'>Loading...</span></div>");
 					$("#LoadingDulu").show();
 				}, 500);
 			},

@@ -3,6 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Barang extends MY_Controller 
 {
+	public function __construct(){
+
+		parent::__construct();
+		$this->load->library('form_validation');
+	   // $this->load->database();
+
+	}
+
 	public function index()
 	{
 		$this->load->view('barang/barang_data');
@@ -116,6 +124,7 @@ class Barang extends MY_Controller
 
 				if($inserted > 0)
 				{
+					$this->session->set_flashdata('flash','menyimpan data');
 					echo json_encode(array(
 						'status' => 1,
 						'pesan' => "<i class='fa fa-check' style='color:green;'></i> Data barang berhasil dismpan."
@@ -123,7 +132,7 @@ class Barang extends MY_Controller
 				}
 				else
 				{
-					$this->query_error("Oops, terjadi kesalahan, coba lagi !");
+					$this->session->set_flashdata('gagal','menyimpan data');
 				}
 			}
 			else
@@ -218,6 +227,7 @@ class Barang extends MY_Controller
 							$update = $this->m_barang->update_barang($id_barang, $nama, $id_kategori_barang, $ukuran, $stok, $modal, $harga);
 							if($update)
 							{
+								$this->session->set_flashdata('flash','mengedit data');
 								echo json_encode(array(
 									'status' => 1,
 									'pesan' => "<div class='alert alert-success'><i class='fa fa-check'></i> Data barang berhasil diupdate.</div>"
@@ -308,6 +318,7 @@ class Barang extends MY_Controller
 					$insert 	= $this->m_kategori_barang->tambah_kategori($kategori, $id_rasa);
 					if($insert)
 					{
+						$this->session->set_flashdata('flash','menambah kategori');
 						echo json_encode(array(
 							'status' => 1,
 							'pesan' => "<div class='alert alert-success'><i class='fa fa-check'></i> <b>".$kategori."</b> berhasil ditambahkan.</div>"

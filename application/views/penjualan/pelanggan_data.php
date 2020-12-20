@@ -4,7 +4,7 @@
 <?php
 $level = $this->session->userdata('ap_level');
 ?>
-
+<meta http-equiv='refresh' content='300'>
 <div class="container bg-light">
 	<br>
 	<div class="panel panel-default">
