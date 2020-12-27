@@ -200,9 +200,6 @@ $('#toggle').click(function() {
 		          
 		</div>
 
-	
-
-
 
 <script>
 $(function(){
