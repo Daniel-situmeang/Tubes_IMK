@@ -37,7 +37,7 @@ $this->load->model('M_barang');
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  */
-    echo '<h1>Nama Barang : '.$nama_barang.'</h1>';
+	echo '<h1>Nama Barang : '.preg_replace('/%20/', ' ', $nama_barang).'</h1>';
  
     $PNG_TEMP_DIR = 'C:\xampp\htdocs\Tubes_IMK\assets'.DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR;
 
