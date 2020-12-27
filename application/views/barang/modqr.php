@@ -1,13 +1,12 @@
-<head>
+<!-- <head>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <title>Kasir</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
 <?php $this->load->view('include/header'); ?>
 <?php $this->load->view('include/navbar'); ?>
-</head>
+
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
@@ -80,10 +79,12 @@ $this->load->model('M_barang');
 		$ambil= $this->M_barang->ambil_nama($id)->row();
 		if($ambil = $nama){
 		$tambah = $this->M_barang->tambahqrcode($id,$gbr);
-		$this->session->set_flashdata('flash','mengedit qrcode');
+		$this->session->set_flashdata('flash','mengedit qrcode, silahkan lihat hasil editan anda');
+		redirect('barang');
 		}
 		else{
 			$this->session->set_flashdata('warning','dengan nama barang');
+			redirect('barang/qrcode');
 		}  
         
     } else {    
@@ -125,7 +126,7 @@ $this->load->model('M_barang');
     echo '</select></div>
         <div class="form-group col-md-3">
         <br>
-        <input type="submit" class="btn btn-success mt-2" value="Buat QRcode" onClick="window.location.reload();">
+        <button type="submit" class="btn btn-success mt-2" value="">Buat QRcode</button>
         </div></center></form><hr/>';
         ?>
 </div>
