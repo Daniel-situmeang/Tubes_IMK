@@ -31,6 +31,5 @@
 		</script>
 	</head>
 	<body>
-
-		<div class="flash-data" data-flashdata="<?=$this->session->flashdata('flash');?>"></div>
+<div class="flash-data" data-flashdata="<?=$this->session->flashdata('flash');?>"></div>
 <div class="gagal-data" data-gagal="<?=$this->session->flashdata('gagal');?>"></div>
